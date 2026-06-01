@@ -40,52 +40,43 @@ pillar ships with 25 rules.
 
 ## Install
 
-Clone the repo (or [download the ZIP](https://github.com/hanihh/building-with-ux/archive/refs/heads/main.zip)):
-
-```bash
-git clone https://github.com/hanihh/building-with-ux.git
-```
-
-The skill lives in `building-with-ux/skills/building-with-ux/`. Point your coding agent at it:
-
-### Claude Code
-
-```bash
-# Personal — available in all your projects
-cp -r building-with-ux/skills/building-with-ux ~/.claude/skills/
-
-# …or symlink instead, so `git pull` updates the skill automatically
-ln -s "$(pwd)/building-with-ux/skills/building-with-ux" ~/.claude/skills/building-with-ux
-
-# Project-scoped — commit it to share with your team
-cp -r building-with-ux/skills/building-with-ux <your-project>/.claude/skills/
-```
-
-Restart Claude Code (or start a new session) and run `/skills` to confirm `building-with-ux`
-is listed. It auto-activates on UI design, build, and review tasks.
-
-### Cursor · Windsurf · Codex · Copilot · other agents
-
-These read a project instruction file rather than a skills folder, so point that file at the
-compiled guide. Either copy `skills/building-with-ux/AGENTS.md` into your project, or add one
-line to your agent's rules file (`AGENTS.md`, `.cursorrules`, `.github/copilot-instructions.md`,
-`CLAUDE.md`, etc.):
-
-```
-For any UI/UX work, follow the guidance in skills/building-with-ux/AGENTS.md.
-```
-
-### claude.ai / Claude Desktop
-
-Upload `skills/building-with-ux/SKILL.md` and the `rules/` files to your Project knowledge, or
-paste `SKILL.md` into the conversation.
-
-### Via the skills.sh CLI (optional)
-
-If you use [skills.sh](https://skills.sh):
+Install it like any other Agent Skill — one command, powered by [skills.sh](https://skills.sh):
 
 ```bash
 npx skills add hanihh/building-with-ux
+```
+
+That downloads this repo, detects the skill (via the `skills/*/SKILL.md` convention), and
+installs it for the current project. To make it available across **all** your projects, add `-g`:
+
+```bash
+npx skills add -g hanihh/building-with-ux
+```
+
+Works with Claude Code, Cursor, Windsurf, Codex, Copilot, and any agent that follows the
+[Agent Skills](https://agentskills.io/) format. After installing, restart your agent — in Claude
+Code, run `/skills` to confirm `building-with-ux` is listed. It auto-activates on UI design,
+build, and review tasks.
+
+### Manual install (no CLI)
+
+Clone the repo and copy the skill into your agent's skills directory:
+
+```bash
+git clone https://github.com/hanihh/building-with-ux.git
+
+# Claude Code — personal (all projects)
+cp -r building-with-ux/skills/building-with-ux ~/.claude/skills/
+
+# …or project-scoped, shared via your repo
+cp -r building-with-ux/skills/building-with-ux <your-project>/.claude/skills/
+```
+
+For agents that read a single instruction file (Cursor, Codex, Copilot…), point that file at
+the compiled guide instead:
+
+```
+For any UI/UX work, follow the guidance in skills/building-with-ux/AGENTS.md.
 ```
 
 ## Usage
