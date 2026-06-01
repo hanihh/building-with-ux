@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+
+# Logs and env
+*.log
+.env
+.env.*
+
+# Scratch (per CONTRIBUTING.md, the distillation worksheet is not committed)
+scratch/
+*.scratch.md
