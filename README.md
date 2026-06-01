@@ -6,6 +6,21 @@ are packaged instructions that extend an agent's capabilities.
 Skills follow the [Agent Skills](https://agentskills.io/) format and install via
 [skills.sh](https://skills.sh).
 
+## Why I built this
+
+There's no shortage of skills, tools, or "experts" — there are millions. Scroll Facebook,
+Instagram, or X and you'll find endless takes on design and productivity, but almost no one
+actually teaching how to *use* Claude and coding agents well, or how to deal with the flip side
+of all that abundance: **skills-and-tools anxiety** — the nagging feeling that you're using the
+wrong tool, missing a better one, or just drowning in options.
+
+This repo is my answer to that. Instead of hoarding every skill that exists, it collects only
+the ones **I actually use, every day** — distilled from real practitioners and battle-tested in
+my own work. The goal isn't to be exhaustive; it's to be the *one* set of skills I reach for, so
+I (and anyone who installs it) can stop tool-shopping and just build.
+
+`building-with-ux` is the first. More of my daily drivers will land here over time.
+
 ## Available Skills
 
 ### building-with-ux
