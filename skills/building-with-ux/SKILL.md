@@ -1,205 +1,140 @@
 ---
 name: building-with-ux
-description: Holistic UX design intelligence for building clean, usable UI artifacts on web and mobile. Use this skill when designing, building, reviewing, or improving any interface — covering visual hierarchy, layout, color, typography, interaction, motion, navigation, content and microcopy, and accessibility. Guidance is distilled into atomic, sourced rules across 7 pillars and applied through a build workflow that turns intent into a clean artifact. Triggers on building or refining UI (screens, components, flows, prototypes, artifacts) and on UX/design reviews.
+description: Holistic UX design intelligence for building clean, usable web and mobile interfaces. Use when designing, implementing, reviewing, or improving screens, components, flows, prototypes, landing pages, or dashboards. Covers information hierarchy, layout, surfaces, color systems and semantic tokens, typography, interaction, motion, navigation, content, microcopy, states, forms, and accessibility through seven focused references and a mandatory build-and-review checklist.
 license: MIT
 metadata:
   author: hani
-  version: "3.0.0"
+  version: "4.0.0"
 ---
 
 # Building with UX
 
-Design intelligence for building clean, usable interfaces. Guidance is organized into
-**7 pillars** that together cover a whole interface — not just the words in it. Each rule is
-atomic (one file) and applied through a **Build Workflow** that turns intent into a clean
-artifact. The 23 Memorisely-derived additions record direct reel provenance.
+Build interfaces that are understandable, purposeful, and usable—not merely decorated. This
+skill contains **48 rules across 7 pillars**. The rules are consolidated by pillar so agents
+can load complete, relevant guidance without navigating dozens of small files. The 23
+Memorisely-derived additions retain direct reel provenance.
 
-> Knowledge in this skill grows by distilling expert UX talks (videos, reels, articles) into
-> atomic rules. See `CONTRIBUTING.md` for the transcript → rule process. The skill currently
-> ships with **48 rules across all 7 pillars**.
+## When to apply
 
-## When to Apply
+Use this skill whenever a task changes how an interface **looks, feels, reads, moves, or is
+used**, including:
 
-Use this skill when the task changes how an interface **looks, feels, reads, moves, or is used**:
+- Building a screen, component, flow, landing page, dashboard, prototype, or other UI artifact
+- Reviewing or improving hierarchy, layout, usability, consistency, content, or accessibility
+- Choosing visual treatment, interaction states, navigation behavior, feedback, or microcopy
+- Diagnosing an interface that feels unclear, generic, cluttered, or unfinished
 
-- Building a new artifact — a screen, component, flow, landing page, dashboard, or prototype
-- Reviewing or improving existing UI for usability, hierarchy, consistency, or accessibility
-- Choosing structure, layout, visual treatment, interaction states, or copy
-- Diagnosing "this doesn't feel professional / clear / finished" problems
+Skip it for pure backend, API, infrastructure, or non-interface work with no user-facing
+visual or textual surface.
 
-Skip for: pure backend/API/infra work, or non-interface logic with no visual or textual surface.
+## Non-negotiable agent instructions
 
-## The 7 Pillars
+For every applicable task, follow this checklist in order:
 
-| # | Pillar | Prefix | Focus | Impact |
-|---|--------|--------|-------|--------|
-| 1 | Foundations | `principles-` | Hierarchy, consistency, feedback, affordance, cognitive load | CRITICAL |
-| 2 | Layout & Hierarchy | `layout-` | Grid, spacing rhythm, alignment, whitespace, focal point, responsive | HIGH |
-| 3 | Visual Design | `visual-` | Color & contrast, type scale & pairing, elevation, iconography | HIGH |
-| 4 | Interaction & Motion | `interaction-` | States, affordances, animation, gestures, touch targets | HIGH |
-| 5 | Navigation & IA | `nav-` | Structure, wayfinding, search, back behavior, deep linking | HIGH |
-| 6 | Content & Microcopy | `errors- states- forms- feedback- onboarding-` | Interface text and message patterns | HIGH |
-| 7 | Accessibility & Inclusion | `a11y-` | Contrast, keyboard, screen readers, reduced motion, color-not-only | CRITICAL |
+- [ ] **Frame the job.** Identify the user, platform, task, primary job, supporting jobs,
+  independent decision regions, constraints, and supplied information. When context is
+  missing, state the assumptions that affect the design.
+- [ ] **Select references before designing.** Read Foundations plus every pillar reference
+  that affects the task. Never rely only on this summary when a relevant reference exists.
+- [ ] **Inventory before styling.** Preserve the meaning and accuracy of supplied information;
+  select what serves the task, rank it, group it, and establish reading order before visual
+  styling. Never invent unsupported facts, states, metrics, achievements, or behavior.
+- [ ] **Apply rules as instructions.** Treat relevant rule checklists and rule bodies as build
+  requirements. Resolve conflicts using the user's task, platform conventions, evidence, and
+  accessibility—not personal taste.
+- [ ] **Render and inspect.** Evaluate the artifact at target size and in realistic content,
+  edge, loading, empty, error, success, responsive, and theme states as applicable.
+- [ ] **Run the pre-delivery checklist.** Fix failures before presenting the result. If a rule
+  cannot be satisfied, name the rule, explain the constraint, and state the trade-off.
+- [ ] **Report traceably.** Cite the applied pillar and rule IDs in the rationale and list the
+  checks performed.
 
-## Build Workflow
+Do not flatten the interface into equally weighted information, preserve an accidental source
+order, add decorative containers around every group, or introduce a primary action where the
+task does not support one. The goal is an intentional hierarchy, not a fixed visual template.
 
-Apply the pillars in this order when building an artifact. Each step names the question to
-answer; pull specific rules from the matching pillar's `rules/` as they exist.
+## Reference routing
 
-1. **Frame** — What is this artifact for, who uses it, on what platform, and what is its
-   primary job? Record legitimate supporting jobs and independent decision regions instead of
-   forcing a complex dashboard into one action.
-2. **Foundations** (`principles-`) — Establish a clear hierarchy and an evidence-backed
-   primary action in each decision region; remove choices that don't serve the job.
-3. **Structure** (`layout-`, `nav-`) — Inventory and rank the supplied information before
-   styling it; group related facts, define the reading order, and express it through placement,
-   scale, alignment, contrast, and spacing. Form groups with proximity before adding surfaces;
-   every additional or internal border, background, shadow, or divider needs a distinct job
-   such as relationship, state, elevation, interaction, readability, or emphasis. Select
-   task-relevant facts and preserve the meaning and accuracy of anything presented; do not
-   invent unsupported content. Make navigation predictable.
-4. **Style** (`visual-`) — Apply a coherent color system and type scale; prefer consistency
-   over novelty. For reusable or themed product UI, build color as
-   `raw value → primitive → semantic role`; components consume semantic roles instead of raw
-   values or primitives. Disposable prototypes may use local semantic variables.
-5. **Interaction & Motion** (`interaction-`) — Give every interactive element its states
-   (hover/press/disabled/loading); use motion to explain cause and effect; confirm input fast.
-6. **Content & Microcopy** (Pillar 6) — Apply the rules below for errors, states, forms,
-   feedback, and onboarding.
-7. **Accessibility** (`a11y-`) — Verify contrast, keyboard paths, screen-reader labels,
-   reduced-motion, and that color is never the only signal.
-8. **Review** — Run the Pre-Delivery Checklist and cut anything that doesn't serve the job.
+Read the smallest set that fully covers the task. Foundations is required for all interface
+work; add every other affected pillar. For a complete interface or design review, read all
+seven.
 
-## Quick Reference
+| # | Pillar | Read when the task involves | Reference |
+|---|---|---|---|
+| 1 | Foundations | Goals, hierarchy, priorities, familiar patterns, validation | [`references/foundations.md`](references/foundations.md) |
+| 2 | Layout & Hierarchy | Information order, grouping, spacing, alignment, containers, responsive flow | [`references/layout-hierarchy.md`](references/layout-hierarchy.md) |
+| 3 | Visual Design | Color, semantic tokens, contrast, type, radii, elevation, icons, themes | [`references/visual-design.md`](references/visual-design.md) |
+| 4 | Interaction & Motion | States, transitions, animation, confirmations, control stability | [`references/interaction-motion.md`](references/interaction-motion.md) |
+| 5 | Navigation & IA | Structure, wayfinding, sidebars, menus, repeated choices | [`references/navigation-ia.md`](references/navigation-ia.md) |
+| 6 | Content & Microcopy | Errors, empty/loading states, forms, feedback, onboarding, help | [`references/content-microcopy.md`](references/content-microcopy.md) |
+| 7 | Accessibility & Inclusion | Contrast, touch, keyboard, semantics, reflow, reduced motion | [`references/accessibility.md`](references/accessibility.md) |
 
-### Pillar 1 — Foundations
+## Build workflow
 
-- [`principles-one-primary-action`](rules/principles-one-primary-action.md) — Give each decision region one primary action
-- [`principles-use-familiar-interactions`](rules/principles-use-familiar-interactions.md) — Prefer familiar interactions over novel ones
-- [`principles-validate-real-content-and-flows`](rules/principles-validate-real-content-and-flows.md) — Validate with real content and complete flows
+1. **Frame** — Define the user, context, task, primary job, supporting jobs, independent
+   decision regions, constraints, content inputs, and success criteria.
+2. **Prioritize** — Apply Foundations. Give a decision region one primary action only when
+   evidence shows one genuinely dominates; informational regions may need no action.
+3. **Structure** — Apply Layout & Hierarchy and Navigation & IA. Inventory and rank supplied
+   information, group related facts, create the reading order, and establish predictable
+   navigation before styling.
+4. **Style** — Apply Visual Design. Express hierarchy with placement, scale, weight, contrast,
+   alignment, and spacing. Use proximity before containers. In reusable or themed product UI,
+   use `raw value → primitive → semantic role → component`; components consume semantic roles.
+5. **Make it respond** — Apply Interaction & Motion. Define states, communicate cause and
+   effect, confirm destructive consequences, and provide immediate feedback.
+6. **Write every state** — Apply Content & Microcopy. Cover default, empty, loading, error,
+   success, forms, feedback, and onboarding where relevant.
+7. **Include** — Apply Accessibility & Inclusion throughout implementation, not as a final
+   cosmetic pass.
+8. **Review** — Render the complete flow, run the checklist below, and remove anything that
+   does not serve an identified job.
 
-### Pillar 2 — Layout & Hierarchy
+## Pre-delivery checklist
 
-- [`layout-group-and-rank-content`](rules/layout-group-and-rank-content.md) — Design the information hierarchy before styling
-- [`layout-use-one-alignment-keyline`](rules/layout-use-one-alignment-keyline.md) — Use one dominant alignment keyline
-- [`layout-use-whitespace-before-containers`](rules/layout-use-whitespace-before-containers.md) — Use whitespace before adding containers
-- [`layout-use-consistent-spacing-scale`](rules/layout-use-consistent-spacing-scale.md) — Use a consistent spacing scale
-- [`layout-design-mobile-as-scrollable-flow`](rules/layout-design-mobile-as-scrollable-flow.md) — Design mobile screens as scrollable flows
+- [ ] **Foundations** — Each decision region has an evidence-backed primary only when one
+  genuinely dominates; independent tasks are not flattened into one hierarchy.
+- [ ] **Information** — The artifact preserves the meaning and accuracy of relevant supplied
+  information. Formatting, localization, conversion, and derivation remain traceable. Nothing
+  unsupported was invented.
+- [ ] **Hierarchy** — The intended focal point, groups, and reading order are clear in a
+  five-second read and squint test at target size. Two or three meaningful emphasis levels are
+  distinguishable within a decision region.
+- [ ] **Layout** — Related information is grouped; internal spacing is smaller than spacing
+  between groups; spacing follows a consistent rhythm; alignment is intentional; responsive
+  behavior forms a usable flow.
+- [ ] **Surfaces** — Every additional or internal border, background, shadow, divider, and
+  nested container communicates a distinct relationship, state, elevation, interaction,
+  readability need, or emphasis. Ordinary groups use proximity, alignment, typography, and
+  whitespace. A base canvas or outer component surface may define the working region.
+- [ ] **Visual system** — Color, type, radii, elevation, and icons come from coherent systems.
+  Reusable or themed components consume semantic color roles rather than raw values or
+  primitives, except for documented technical constraints.
+- [ ] **Interaction** — Applicable hover, focus, pressed, disabled, loading, success, and
+  failure states exist; feedback is timely; motion explains relationships and respects reduced
+  motion.
+- [ ] **Content** — Errors, empty/loading states, forms, feedback, onboarding, and help follow
+  Pillar 6; critical information persists instead of appearing only in transient UI.
+- [ ] **Accessibility** — Contrast passes in context; touch targets are generous; keyboard
+  paths and focus order work; accessible names and semantics exist; color is not the only
+  signal; zoom, reflow, dynamic type, and reduced motion are supported as applicable.
+- [ ] **Reality and fit** — Realistic content, edge states, themes, and the complete task flow
+  were exercised. Every element serves an identified primary or supporting job; unowned
+  content is removed.
 
-### Pillar 3 — Visual Design
+## Required response format
 
-- [`visual-match-nested-radii-to-padding`](rules/visual-match-nested-radii-to-padding.md) — Match nested radii to their padding
-- [`visual-give-color-a-job`](rules/visual-give-color-a-job.md) — Give every color a job
-- [`visual-build-dark-mode-depth-with-surfaces`](rules/visual-build-dark-mode-depth-with-surfaces.md) — Build dark-mode depth with dark surfaces
-- [`visual-test-typefaces-at-use-size`](rules/visual-test-typefaces-at-use-size.md) — Test typefaces at their real use sizes
-- [`visual-use-one-icon-family`](rules/visual-use-one-icon-family.md) — Use one coherent icon family
-- [`visual-layer-primitive-and-semantic-tokens`](rules/visual-layer-primitive-and-semantic-tokens.md) — Layer primitive and semantic tokens
+When applying this skill, return:
 
-### Pillar 4 — Interaction & Motion
+1. **Artifact or recommendation** — the design, component, implementation, or change.
+2. **Rule-based rationale** — concise reasoning tied to pillar names and rule IDs.
+3. **Alternatives** — only when a meaningful trade-off needs a decision.
+4. **Checks** — relevant pre-delivery checks run, failures fixed, and any unresolved constraint.
 
-- [`interaction-choose-transition-by-relationship`](rules/interaction-choose-transition-by-relationship.md) — Choose transitions by the information relationship
-- [`interaction-animate-by-hierarchy`](rules/interaction-animate-by-hierarchy.md) — Animate according to visual hierarchy
-- [`interaction-confirm-destructive-actions-with-consequences`](rules/interaction-confirm-destructive-actions-with-consequences.md) — State consequences in destructive confirmations
-- [`interaction-stabilize-aligned-button-widths`](rules/interaction-stabilize-aligned-button-widths.md) — Stabilize button widths in aligned groups
+## Maintaining the skill
 
-### Pillar 5 — Navigation & IA
-
-- [`nav-structure-collapsible-sidebars`](rules/nav-structure-collapsible-sidebars.md) — Preserve hierarchy when sidebars collapse
-- [`nav-use-visual-anchors-for-fast-choices`](rules/nav-use-visual-anchors-for-fast-choices.md) — Use visual anchors for fast repeated choices
-
-### Pillar 6 — Content & Microcopy
-
-**Voice:** clear before clever; specific, not vague; calm, direct, friendly, professional;
-reuse the product's terminology; no blame, jargon, or invisible failures; never fabricate
-technical detail.
-
-#### Errors & Failures (`errors-`)
-
-- [`errors-what-why-next`](rules/errors-what-why-next.md) — Structure errors as what happened, why, and what to do next
-- [`errors-plain-language`](rules/errors-plain-language.md) — No raw codes, stack traces, or "Something went wrong"
-- [`errors-no-blame`](rules/errors-no-blame.md) — Use a neutral, non-blaming tone
-- [`errors-actionable-recovery`](rules/errors-actionable-recovery.md) — Always offer a realistic next step
-- [`errors-place-at-source`](rules/errors-place-at-source.md) — Field errors by the field; action errors by the trigger
-- [`errors-modal-only-when-blocking`](rules/errors-modal-only-when-blocking.md) — Modals only for must-resolve issues, and include an action
-
-#### Empty & Loading States (`states-`)
-
-- [`states-graceful-degradation`](rules/states-graceful-degradation.md) — Render what's ready; load and fail each section independently
-- [`states-empty-purpose-cta`](rules/states-empty-purpose-cta.md) — Empty states: what it's for, why it's empty, next step + CTA
-- [`states-empty-no-dead-end`](rules/states-empty-no-dead-end.md) — No blank screen, no blame; surface the primary action
-- [`states-loading-match-scope`](rules/states-loading-match-scope.md) — Match indicator to scope: skeleton, progress, spinner, optimistic
-- [`states-loading-set-expectations`](rules/states-loading-set-expectations.md) — Show that progress is happening; communicate long waits
-- [`states-optimistic-safe-only`](rules/states-optimistic-safe-only.md) — Optimistic UI only for low-stakes reversible actions; revert on failure
-- [`states-labor-illusion-honest`](rules/states-labor-illusion-honest.md) — Show believable effort for complex work; never fake long delays
-
-#### Forms & Input (`forms-`)
-
-- [`forms-expose-small-choice-sets`](rules/forms-expose-small-choice-sets.md) — Expose small choice sets instead of hiding them
-- [`forms-inline-validation`](rules/forms-inline-validation.md) — Validate inline as users leave each field, not all at once on submit
-- [`forms-mark-required`](rules/forms-mark-required.md) — Clearly mark required fields and show what's missing
-- [`forms-show-limits-and-rules`](rules/forms-show-limits-and-rules.md) — Show character limits and password rules up front, updating live
-- [`forms-prefill-known-data`](rules/forms-prefill-known-data.md) — Pre-fill fields with data you already have
-- [`forms-forgiving-input`](rules/forms-forgiving-input.md) — Accept flexible formats and normalize in the backend
-
-#### Success & Feedback (`feedback-`)
-
-- [`feedback-confirm-success`](rules/feedback-confirm-success.md) — Confirm what succeeded, what's next, and a way forward
-- [`feedback-toasts-non-critical`](rules/feedback-toasts-non-critical.md) — Use toasts only for low-importance, safe-to-miss updates
-- [`feedback-inline-when-actionable`](rules/feedback-inline-when-actionable.md) — Use inline feedback near the element when the user may need to act
-- [`feedback-persist-critical-info`](rules/feedback-persist-critical-info.md) — Keep key information somewhere persistent, not only in a toast
-
-#### Onboarding & Help (`onboarding-`)
-
-- [`onboarding-focus-key-actions`](rules/onboarding-focus-key-actions.md) — Focus on the few actions that lead to value
-- [`onboarding-just-in-time-help`](rules/onboarding-just-in-time-help.md) — Short, context-specific help near complex controls
-- [`onboarding-skippable`](rules/onboarding-skippable.md) — Always allow skip/dismiss; no walls of text
-
-### Pillar 7 — Accessibility & Inclusion
-
-- [`a11y-test-contrast-in-context`](rules/a11y-test-contrast-in-context.md) — Test contrast in the real component context
-- [`a11y-size-touch-targets-generously`](rules/a11y-size-touch-targets-generously.md) — Give touch controls generous target areas
-
-These two corpus-derived rules are additions, not a complete accessibility standard. Keyboard,
-screen-reader semantics, focus order/visibility, dynamic type/reflow, reduced motion,
-color-not-only, and accessible charts/tables remain baseline obligations. Apply the current
-platform guidance and WCAG level required by the product even when no atomic rule exists yet.
-
-## Pre-Delivery Checklist
-
-Before an artifact ships, confirm:
-
-- **Foundations** — Each decision region has an evidence-backed primary when one genuinely dominates; the hierarchy guides the eye without flattening independent tasks.
-- **Layout** — The rendered artifact has an intentional reading order and an appropriate number
-  of distinguishable emphasis levels; related information is visibly grouped; spacing follows
-  a consistent rhythm; nothing is arbitrarily aligned.
-- **Surfaces** — Every additional or internal border, background, shadow, divider, and nested
-  container communicates a distinct relationship, state, elevation, interaction, readability
-  need, or emphasis; ordinary groups rely on proximity, alignment, typography, and whitespace.
-  A base canvas or outer component surface may define the working region.
-- **Visual** — Color and type come from one system; reusable or themed components consume
-  semantic color tokens rather than raw values or primitives, except for documented technical
-  constraints; no orphan styles.
-- **Interaction** — Every interactive element has hover/press/disabled/loading states; feedback is immediate.
-- **Content** — Errors, empty/loading states, forms, and confirmations follow Pillar 6.
-- **Accessibility** — Contrast passes in context, touch targets are generous, keyboard works, labels exist, color isn't the only signal, and motion respects reduced-motion.
-- **Fit** — Every element serves an identified primary or supporting job; unowned content is cut.
-- **Reality** — Realistic content, edge states, themes, and the complete task flow have been exercised.
-- **Visual read** — At target size, a five-second read and squint test reveal the intended focal
-  point and groups; displayed information remains accurate and traceable through formatting,
-  localization, conversion, or derivation; no unsupported content was invented.
-
-## Response Format
-
-When applying this skill, structure outputs as:
-
-1. **Artifact / Recommendation** — the design, component, or change.
-2. **Rationale** — bullets tied to specific rules (cite rule names and pillars).
-3. **Alternatives** (optional) — variants when a trade-off is worth surfacing.
-4. **Checks** — the relevant Pre-Delivery Checklist items.
-
-## How to Use
-
-- Read individual rule files for detail and examples: `rules/{prefix}-{slug}.md`
-- Add new knowledge from a talk: follow `CONTRIBUTING.md`
-- Section map, prefixes, and impacts: `rules/_sections.md`
-- Full compiled guide (all rules expanded): `AGENTS.md`
+- Add or revise knowledge through [`CONTRIBUTING.md`](CONTRIBUTING.md).
+- Keep each rule independently identifiable by its stable rule ID inside the appropriate pillar
+  reference.
+- Keep all seven reference links direct from this file; references must not depend on another
+  file to locate their instructions.

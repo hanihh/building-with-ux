@@ -1,85 +1,109 @@
 # Contributing: turning a talk into rules
 
-This skill grows by distilling expert UX talks — Facebook/Instagram reels, YouTube videos,
-conference talks, articles — into **atomic, sourced rules**. This guide is the repeatable
-process. The goal is a skill that stays *curated and traceable*: every rule earns its place
-and names where it came from.
+This skill grows by distilling expert UX talks—Facebook or Instagram reels, YouTube videos,
+conference talks, and articles—into **independently identifiable, sourced rules**. Rules live
+as sections inside seven pillar references so the skill stays curated, traceable, and easy for
+agents to load.
 
 ## Principles
 
-- **One rule per file.** A rule is a single, actionable assertion — not a topic.
-- **Source everything.** Each rule records the talk it came from (`source:` frontmatter), so
-  claims stay verifiable and you can revisit the original.
-- **Curate, don't dump.** Most of a 60-second reel is hook, story, and filler. Expect 1–4
-  keepable rules from a talk, sometimes zero.
-- **Generalize.** Keep the principle, drop the creator's specific app/example unless it makes
-  the best Don't/Do pair.
+- **One assertion per rule section.** A rule is a single, actionable claim, not a broad topic.
+- **Source everything available.** Record creator, title, URL or platform, and date when known.
+  Existing rules without a source remain valid records; do not invent provenance.
+- **Curate, do not dump.** Most short talks contain hooks, stories, and repetition. Expect 1–4
+  keepable rules, sometimes zero.
+- **Generalize.** Keep the reusable principle. Retain a creator's specific example only when it
+  makes the clearest Don't/Do pair.
+- **Preserve stable IDs.** Existing IDs are citations and must not change during editing or
+  consolidation unless the underlying rule changes identity.
+- **Avoid duplicates.** Search titles, IDs, tags, and rule bodies before adding knowledge.
 
-## Process
+## Process checklist
 
-### 1. Capture the transcript
+### 1. Capture the source
 
-Transcribe or paste the talk's spoken content into a scratch file. Keep the source URL,
-creator name, and date — you'll need them for the `source:` field.
+- [ ] Transcribe or paste the spoken or written content into scratch work.
+- [ ] Record the source URL, creator, title, and date when known.
+- [ ] Do not commit the raw transcript unless it is itself a project deliverable.
 
 ### 2. Extract candidate claims
 
-List every distinct, *actionable* design assertion the speaker makes. Phrase each as an
-imperative ("Mark the primary action," not "primary actions are important"). Ignore intros,
-self-promotion, and restated points.
+- [ ] List every distinct, actionable design assertion as an imperative.
+- [ ] Ignore introductions, promotion, filler, and restated points.
+- [ ] Separate compound advice into independently testable claims.
 
-### 3. Filter
+### 3. Filter and reconcile
 
 Keep a claim only if it is:
 
-- **Actionable** — you could check whether a screen follows it.
-- **Generalizable** — true beyond the speaker's one example.
-- **Not already covered** — search existing rules first; if it overlaps, refine the existing
-  rule instead of adding a near-duplicate.
+- [ ] **Actionable** — an agent can check whether a design follows it.
+- [ ] **Generalizable** — it applies beyond the source's single example.
+- [ ] **Supported** — the rule does not overstate the source or invent technical detail.
+- [ ] **New** — it is not already covered; otherwise improve the existing rule.
 
-Drop opinion, taste calls, and trend-chasing unless they carry a reusable principle.
+Drop unsupported taste, trend-chasing, and near-duplicates. If a new claim conflicts with an
+existing rule, do not silently keep both:
 
-### 4. Place it in a pillar
+- Prefer the more authoritative or current evidence when one clearly wins.
+- When both apply in different contexts, add the condition to one rule.
+- Preserve competing sources so the disagreement remains visible.
 
-Assign each kept claim to a pillar and pick the prefix (see `rules/_sections.md`):
+### 4. Choose the pillar and stable ID
 
-| Pillar | Prefix | Use when the claim is about… |
-|--------|--------|------------------------------|
-| Foundations | `principles-` | a cross-cutting heuristic (hierarchy, consistency, cognitive load) |
-| Layout & Hierarchy | `layout-` | space, grid, alignment, whitespace, responsiveness |
-| Visual Design | `visual-` | color, type, elevation, icons, style |
-| Interaction & Motion | `interaction-` | states, animation, gestures, touch targets |
-| Navigation & IA | `nav-` | structure, wayfinding, search, back behavior |
-| Content & Microcopy | `errors- states- forms- feedback- onboarding-` | interface text and message patterns |
-| Accessibility & Inclusion | `a11y-` | contrast, keyboard, screen readers, reduced motion |
+| Pillar reference | Prefix(es) | Use for |
+|---|---|---|
+| `references/foundations.md` | `principles-` | Cross-cutting hierarchy, consistency, affordance, feedback, cognitive load |
+| `references/layout-hierarchy.md` | `layout-` | Space, order, grid, alignment, whitespace, containers, responsiveness |
+| `references/visual-design.md` | `visual-` | Color, tokens, contrast, type, radii, elevation, icons, style |
+| `references/interaction-motion.md` | `interaction-` | States, animation, transitions, gestures, confirmations |
+| `references/navigation-ia.md` | `nav-` | Structure, wayfinding, menus, search, back behavior, deep links |
+| `references/content-microcopy.md` | `errors-`, `states-`, `forms-`, `feedback-`, `onboarding-` | Interface text and state patterns |
+| `references/accessibility.md` | `a11y-` | Contrast, input, keyboard, semantics, reflow, reduced motion |
 
-### 5. Write the rule
+Create a unique kebab-case ID such as `layout-rank-content-before-styling`. For Content &
+Microcopy, place the rule under its matching category heading.
 
-Copy `rules/_template.md` to `rules/{prefix}-{slug}.md`. Fill in:
+### 5. Write the rule section
 
-- `title` — the imperative rule
-- `impact` / `impactDescription` — see levels in `README.md`
-- `tags` — a few keywords for retrieval
-- `source` — `Creator — "Talk title" (URL/platform), YYYY-MM`
-- A tight **Don't / Do** pair — concrete and copy-pasteable
+Use this template inside the selected reference:
 
-### 6. Register the rule
+```markdown
+### Short imperative rule title
 
-- Add a one-line entry under the matching pillar in `SKILL.md` → **Quick Reference**.
-- Expand the rule under its pillar in `AGENTS.md` (the hand-maintained compiled guide).
+- **Rule ID:** `prefix-short-slug`
+- **Impact:** MEDIUM
+- **Impact rationale:** The usability consequence of ignoring this rule.
+- **Tags:** tag1, tag2
+- **Source:** Creator — "Talk title" (URL or platform), YYYY-MM
 
-## Handling conflicts
+One or two sentences explaining what to do and why it matters for the user.
 
-If a new claim contradicts an existing rule, don't silently add both. Reconcile:
+**Don't:** A concrete bad example.
 
-- If one source is more authoritative or recent, note the nuance in the surviving rule.
-- If both hold in different contexts, fold the condition into the rule ("for X, do A; for Y, do B").
-- Record competing sources in `source:` so the disagreement stays visible.
+**Do:** A concrete good example.
 
-## Distillation worksheet (scratch, not committed)
+Optional nuance, edge cases, implementation example, research basis, or verification checks.
+```
 
-| # | Claim (imperative) | Actionable? | General? | New? | Pillar / prefix | Keep? |
-|---|--------------------|-------------|----------|------|-----------------|-------|
-| 1 |                    | y/n         | y/n      | y/n  |                 | y/n   |
+Use `####` for rule titles inside the category subsections of
+`references/content-microcopy.md`. Omit `Source` only when no reliable source exists; never
+fabricate one.
 
-Work the table, then write files only for the `Keep = y` rows.
+### 6. Register and validate
+
+- [ ] Add the rule section to exactly one pillar reference.
+- [ ] Update that reference's agent checklist only if the new rule changes its essential
+  workflow; do not restate every rule in the checklist.
+- [ ] Update rule counts in `SKILL.md`, this file's companion `README.md`, and `metadata.json`.
+- [ ] Confirm `SKILL.md` still links directly to all seven references.
+- [ ] Search for duplicate rule IDs and require exactly one occurrence per rule.
+- [ ] Validate every rule has a title, ID, impact, impact rationale, tags, and complete body.
+- [ ] Run the skill validator and Markdown/link checks before committing.
+
+## Distillation worksheet
+
+Use this in scratch work, not in the committed skill:
+
+| # | Claim (imperative) | Actionable? | General? | Supported? | New? | Pillar / ID | Keep? |
+|---|---|---|---|---|---|---|---|
+| 1 |  | y/n | y/n | y/n | y/n |  | y/n |

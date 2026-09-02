@@ -1,8 +1,8 @@
 {
-  "version": "3.0.0",
+  "version": "4.0.0",
   "author": "hani",
   "date": "September 2026",
-  "abstract": "Holistic UX design intelligence for building clean, usable UI artifacts. Organizes 48 atomic rules into 7 pillars — Foundations, Layout & Hierarchy, Visual Design, Interaction & Motion, Navigation & IA, Content & Microcopy, and Accessibility & Inclusion — applied through a build workflow that turns intent into a clean artifact. The 23 Memorisely-derived additions record direct reel provenance.",
+  "abstract": "Holistic UX design intelligence for building clean, usable UI artifacts. Organizes 48 independently identifiable rules into 7 focused pillar references — Foundations, Layout & Hierarchy, Visual Design, Interaction & Motion, Navigation & IA, Content & Microcopy, and Accessibility & Inclusion — with mandatory agent instructions, pillar checklists, and a pre-delivery review workflow. The 23 Memorisely-derived additions retain direct reel provenance.",
   "references": [
     "https://www.nngroup.com/articles/error-message-guidelines/",
     "https://www.nngroup.com/articles/empty-state-interface-design/",
