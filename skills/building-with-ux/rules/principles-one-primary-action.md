@@ -10,7 +10,7 @@ source: "Memorisely — ‘Not every action needs to be a primary button’ (htt
 
 **Impact: HIGH (clear priority reduces decision time)**
 
-Choose priority from the user's current goal, task sequence, frequency, and risk—not from visual taste. Give each decision region a dominant action when one genuinely dominates; independent regions may have different primaries. If evidence does not support a dominant action, use balanced secondary actions instead of inventing one. Demote low-value actions and reveal infrequent options progressively.
+Choose priority from the user's current goal, task sequence, frequency, and risk—not from visual taste. Give each decision region a dominant action when one genuinely dominates; independent regions may have different primaries. If evidence does not support a dominant action, use balanced secondary actions instead of inventing one. An informational region may need no action at all; never add a call to action merely to satisfy this rule. Demote low-value actions and reveal infrequent options progressively.
 
 **Don't:** Six equally prominent buttons competing for attention.
 

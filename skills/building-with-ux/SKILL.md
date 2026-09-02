@@ -51,10 +51,17 @@ answer; pull specific rules from the matching pillar's `rules/` as they exist.
    forcing a complex dashboard into one action.
 2. **Foundations** (`principles-`) — Establish a clear hierarchy and an evidence-backed
    primary action in each decision region; remove choices that don't serve the job.
-3. **Structure** (`layout-`, `nav-`) — Lay out on a consistent grid and spacing rhythm;
-   prioritize core content; make navigation predictable.
+3. **Structure** (`layout-`, `nav-`) — Inventory and rank the supplied information before
+   styling it; group related facts, define the reading order, and express it through placement,
+   scale, alignment, contrast, and spacing. Form groups with proximity before adding surfaces;
+   every additional or internal border, background, shadow, or divider needs a distinct job
+   such as relationship, state, elevation, interaction, readability, or emphasis. Select
+   task-relevant facts and preserve the meaning and accuracy of anything presented; do not
+   invent unsupported content. Make navigation predictable.
 4. **Style** (`visual-`) — Apply a coherent color system and type scale; prefer consistency
-   over novelty; use semantic tokens, not raw values.
+   over novelty. For reusable or themed product UI, build color as
+   `raw value → primitive → semantic role`; components consume semantic roles instead of raw
+   values or primitives. Disposable prototypes may use local semantic variables.
 5. **Interaction & Motion** (`interaction-`) — Give every interactive element its states
    (hover/press/disabled/loading); use motion to explain cause and effect; confirm input fast.
 6. **Content & Microcopy** (Pillar 6) — Apply the rules below for errors, states, forms,
@@ -73,7 +80,7 @@ answer; pull specific rules from the matching pillar's `rules/` as they exist.
 
 ### Pillar 2 — Layout & Hierarchy
 
-- [`layout-group-and-rank-content`](rules/layout-group-and-rank-content.md) — Group content before styling and rank the groups
+- [`layout-group-and-rank-content`](rules/layout-group-and-rank-content.md) — Design the information hierarchy before styling
 - [`layout-use-one-alignment-keyline`](rules/layout-use-one-alignment-keyline.md) — Use one dominant alignment keyline
 - [`layout-use-whitespace-before-containers`](rules/layout-use-whitespace-before-containers.md) — Use whitespace before adding containers
 - [`layout-use-consistent-spacing-scale`](rules/layout-use-consistent-spacing-scale.md) — Use a consistent spacing scale
@@ -162,13 +169,24 @@ platform guidance and WCAG level required by the product even when no atomic rul
 Before an artifact ships, confirm:
 
 - **Foundations** — Each decision region has an evidence-backed primary when one genuinely dominates; the hierarchy guides the eye without flattening independent tasks.
-- **Layout** — Spacing follows a consistent rhythm; nothing is arbitrarily aligned.
-- **Visual** — Color and type come from one system; no orphan styles.
+- **Layout** — The rendered artifact has an intentional reading order and an appropriate number
+  of distinguishable emphasis levels; related information is visibly grouped; spacing follows
+  a consistent rhythm; nothing is arbitrarily aligned.
+- **Surfaces** — Every additional or internal border, background, shadow, divider, and nested
+  container communicates a distinct relationship, state, elevation, interaction, readability
+  need, or emphasis; ordinary groups rely on proximity, alignment, typography, and whitespace.
+  A base canvas or outer component surface may define the working region.
+- **Visual** — Color and type come from one system; reusable or themed components consume
+  semantic color tokens rather than raw values or primitives, except for documented technical
+  constraints; no orphan styles.
 - **Interaction** — Every interactive element has hover/press/disabled/loading states; feedback is immediate.
 - **Content** — Errors, empty/loading states, forms, and confirmations follow Pillar 6.
 - **Accessibility** — Contrast passes in context, touch targets are generous, keyboard works, labels exist, color isn't the only signal, and motion respects reduced-motion.
 - **Fit** — Every element serves an identified primary or supporting job; unowned content is cut.
 - **Reality** — Realistic content, edge states, themes, and the complete task flow have been exercised.
+- **Visual read** — At target size, a five-second read and squint test reveal the intended focal
+  point and groups; displayed information remains accurate and traceable through formatting,
+  localization, conversion, or derivation; no unsupported content was invented.
 
 ## Response Format
 

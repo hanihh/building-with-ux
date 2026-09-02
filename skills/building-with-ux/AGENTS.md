@@ -33,8 +33,14 @@ Memorisely-derived additions record direct reel provenance in their rule files.
 
 1. **Frame** — purpose, audience, platform, primary job, supporting jobs, and decision regions.
 2. **Foundations** (`principles-`) — clear hierarchy, evidence-backed priority per decision region, fewer choices.
-3. **Structure** (`layout-`, `nav-`) — consistent grid and spacing; predictable navigation.
-4. **Style** (`visual-`) — coherent color and type system; semantic tokens, not raw values.
+3. **Structure** (`layout-`, `nav-`) — inventory inputs, select task-relevant facts, define the
+   reading order, and group with proximity before adding surfaces. Every additional or internal
+   boundary needs a distinct job such as relationship, state, elevation, interaction,
+   readability, or emphasis. Preserve the meaning and accuracy of anything presented; do not
+   invent unsupported content; keep navigation predictable.
+4. **Style** (`visual-`) — coherent color and type system. For reusable or themed product UI,
+   build color as `raw value → primitive → semantic role`, and consume semantic roles in
+   components. Disposable prototypes may use local semantic variables.
 5. **Interaction & Motion** (`interaction-`) — states for every element; purposeful motion; fast feedback.
 6. **Content & Microcopy** (Pillar 6) — apply the rules below.
 7. **Accessibility** (`a11y-`) — contrast, keyboard, labels, reduced-motion, color-not-only.
@@ -70,7 +76,9 @@ affordance, recognition over recall, and managing cognitive load.
 
 Choose priority from the user's current goal, task sequence, frequency, and risk—not visual
 taste. Use one dominant action only when one genuinely dominates the decision region;
-independent regions may differ. Otherwise use balanced secondary actions.
+independent regions may differ. Otherwise use balanced secondary actions. An informational
+region may need no action at all; never add a call to action merely to satisfy this rule.
+Demote low-value actions and reveal infrequent options progressively.
 
 **Don't:** Six equally prominent buttons competing for attention.
 
@@ -103,14 +111,48 @@ themes, empty/error states, and the path back—not only a polished happy path.
 How space and structure guide the eye — grid, spacing rhythm, alignment, whitespace, focal
 point, content priority, and responsive behavior.
 
-#### Group content before styling and rank the groups
+#### Design the information hierarchy before styling
 
-Cluster content by meaning, then choose primary, secondary, and tertiary groups. Express that
-order with size, weight, color, spacing, placement, and proximity.
+Do not blindly preserve the source data's order or give every item equal emphasis. Before
+choosing a layout, inventory the available inputs, select the facts relevant to the user's
+task, and rank them from the user's likely questions:
 
-**Don't:** Style an unstructured list where every item has equal weight.
+1. **Primary** — the outcome, object, or action the user came to understand or complete.
+2. **Secondary** — facts needed to explain, compare, or act on the primary information.
+3. **Tertiary** — supplementary context such as time, location, or provenance when it is not
+   central to the current task.
 
-**Do:** Establish a hero message, keep related support nearby, and place tertiary metadata last.
+These are importance levels, not fixed field categories or a fixed screen order. Identity,
+location, or any other field may be primary when the user's task makes it central; context may
+also appear first so the primary content is understandable. Cluster related items, choose an
+intentional reading sequence, then express the ranking with placement, scale, weight,
+contrast, and spacing. Within one decision region, prefer two or three clearly distinguishable
+emphasis levels; if everything is prominent, nothing is.
+
+Keep labels, values, status, and actions close to the content they describe. Space inside a
+group must be visibly smaller than the space between groups. Use shared alignment and
+repetition for facts users compare.
+
+**Don't:** Make a generic activity title the largest element, spread related metrics and
+metadata across the card, and style every value with the same weight because that is how the
+API returned the fields.
+
+**Do:** For an activity summary, group person and time as context; make the meaningful result
+the focal point; align comparable metrics; place location with the map; accent a verified
+achievement; and keep actions together after the content. Adapt this anatomy to the user's
+task rather than treating it as a universal card template.
+
+Before delivery, render the interface at its target size and check:
+
+- **Five-second read:** Can someone identify what this is, the main result, and what they can do
+  if an action is relevant?
+- **Squint test:** When details blur, do the intended focal point and groups remain visible?
+- **Truth:** Is every displayed fact accurate and traceable through any formatting,
+  localization, conversion, or derivation? Did the design avoid inventing status, metrics,
+  achievements, or backend behavior?
+
+Research basis: [NN/g on visual hierarchy](https://www.nngroup.com/articles/visual-hierarchy-ux-definition/)
+and [the proximity principle](https://www.nngroup.com/articles/gestalt-proximity/).
 
 #### Use one dominant alignment keyline
 
@@ -123,12 +165,32 @@ communicates a real relationship, such as a trailing value column.
 
 #### Use whitespace before adding containers
 
-Group with proximity, alignment, and whitespace first. Add a surface, border, or shadow only
-when it communicates elevation, interaction, selection, or emphasis.
+Treat containment as a semantic signal, not a default layout technique. Every additional or
+internal background, border, shadow, divider, or nested surface must communicate a distinct
+relationship, state, elevation, interaction, readability need, or emphasis. A base canvas or
+outer component surface may define the working region. If an inner boundary's job cannot be
+named, remove it.
 
-**Don't:** Put every content block inside a bordered card.
+First attempt to form each group through proximity, alignment, typography, and whitespace.
+Use a common surface when a boundary makes a genuinely separate region easier to understand,
+or when it emphasizes an important region. Do not nest containers when the parent and child
+boundaries communicate the same group. Do not use a divider where a deliberate spacing change
+already makes the separation clear.
 
-**Do:** Let whitespace form ordinary groups and reserve surfaces for meaningful emphasis.
+**Don't:** Put metrics in an outlined panel inside a profile card, add a divider below it, and
+give the header another heavy block merely to make the layout feel structured.
+
+**Do:** In a profile summary, keep the outer card as the component boundary, use one restrained
+header surface if identity needs emphasis, let aligned metrics group through proximity, and
+separate the action row with whitespace. Treat this as an example of the decision—not a fixed
+profile-card template.
+
+Before delivery, temporarily remove each inner boundary. If the layout becomes unclear, first
+repair spacing, alignment, or typography. Restore the boundary only when it conveys meaning
+that those lighter signals cannot communicate.
+
+Research basis: [NN/g on common regions](https://www.nngroup.com/articles/common-region/)
+and [visual hierarchy](https://www.nngroup.com/articles/visual-hierarchy-ux-definition/).
 
 #### Use a consistent spacing scale
 
@@ -204,12 +266,50 @@ Define size, stroke, fill, alignment, and active-state rules before adding excep
 
 #### Layer primitive and semantic tokens
 
-Separate raw values, ordered primitives such as `gray/100`, and semantic aliases such as
-`color/text/secondary`. Map light and dark modes through aliases.
+For reusable or themed product UI, build color in three layers: raw values such as `#ffffff`, ordered primitives such as
+`gray/100`, and semantic aliases such as `color/background/fill` or
+`color/text/secondary`. Raw values define primitives; semantic aliases reference primitives;
+components consume semantic aliases.
 
-**Don't:** Apply hex values or vague tokens such as `gray2` directly throughout components.
+Name semantic tokens by purpose and state—background, surface, text, border, action, success,
+warning, error, disabled—not by the color they currently contain. Map light, dark, and
+high-contrast themes by changing the semantic mapping instead of editing component styles.
+Document the primitive scale direction because names such as `gray/100` do not have a universal
+meaning. A token diagram proves the architecture, not the palette: use supplied brand or product
+colors, or state assumptions, rather than inventing a full theme from one example swatch.
 
-**Do:** Map `raw value → primitive → semantic role`, then consume that role in design and code.
+**Don't:** Apply hex values or primitive tokens such as `gray/100` directly throughout
+components, or name a component token after its current appearance such as `lightGrayCard`.
+
+**Do:** Map `raw value → primitive → semantic role`, then consume only the semantic role in
+component design and code. Raw values belong in token definitions; exceptional data
+visualization palettes should still expose semantic series roles.
+
+```css
+:root {
+  --gray-100: #ffffff;
+  --gray-900: #161616;
+  --color-background-fill: var(--gray-100);
+  --color-text-primary: var(--gray-900);
+}
+
+.card {
+  background: var(--color-background-fill);
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] {
+  --color-background-fill: var(--gray-900);
+  --color-text-primary: var(--gray-100);
+}
+```
+
+Before delivery, inspect component styles for raw color literals and direct primitive usage.
+Move each occurrence into the token layers unless a documented technical constraint requires
+an exception, such as `transparent`, `currentColor`, user/data-driven colors, or immutable
+brand assets. Test every documented foreground/background and interaction-state combination
+for contrast in each supported theme. For a disposable prototype, local semantic variables may
+replace a full primitive scale, but do not scatter unexplained literals through component code.
 
 ---
 
@@ -698,3 +798,32 @@ allows. Test at text scaling and on a real device.
 **Don't:** Make only the 20px icon tappable or overlap a floating action with tab targets.
 
 **Do:** Make the full tab cell interactive, pair icon and label, and show a clear active state.
+
+---
+
+## Pre-Delivery Checklist
+
+Before an artifact ships, confirm:
+
+- **Foundations** — Each decision region has an evidence-backed primary when one genuinely
+  dominates; the hierarchy guides the eye without flattening independent tasks.
+- **Layout** — The rendered artifact has an intentional reading order and an appropriate number
+  of distinguishable emphasis levels; related information is visibly grouped; spacing follows
+  a consistent rhythm; nothing is arbitrarily aligned.
+- **Surfaces** — Every additional or internal border, background, shadow, divider, and nested
+  container communicates a distinct relationship, state, elevation, interaction, readability
+  need, or emphasis; ordinary groups rely on proximity, alignment, typography, and whitespace.
+  A base canvas or outer component surface may define the working region.
+- **Visual** — Color and type come from one system; reusable or themed components consume
+  semantic color tokens rather than raw values or primitives, except for documented technical
+  constraints; no orphan styles.
+- **Interaction** — Every interactive element has hover, press, disabled, and loading states;
+  feedback is immediate.
+- **Content** — Errors, empty/loading states, forms, and confirmations follow Pillar 6.
+- **Accessibility** — Contrast passes in context, touch targets are generous, keyboard works,
+  labels exist, color is not the only signal, and motion respects reduced-motion.
+- **Fit** — Every element serves an identified primary or supporting job; unowned content is cut.
+- **Reality** — Realistic content, edge states, themes, and the complete task flow have been exercised.
+- **Visual read** — At target size, a five-second read and squint test reveal the intended focal
+  point and groups; displayed information remains accurate and traceable through formatting,
+  localization, conversion, or derivation; no unsupported content was invented.
