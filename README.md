@@ -28,8 +28,8 @@ I (and anyone who installs it) can stop tool-shopping and just build.
 Build clean, usable UI artifacts by applying UX guidance across a whole interface — layout,
 visual hierarchy, color, typography, interaction, motion, navigation, content/microcopy, and
 accessibility. Guidance is organized into 7 pillars and applied through a build workflow.
-Knowledge is distilled from expert UX talks into atomic, sourced rules; the Content & Microcopy
-pillar ships with 25 rules.
+The skill contains 48 atomic rules across every pillar; 23 new rules include direct Memorisely
+reel provenance.
 
 **Use when:**
 

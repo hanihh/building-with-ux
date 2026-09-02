@@ -4,19 +4,19 @@ description: Holistic UX design intelligence for building clean, usable UI artif
 license: MIT
 metadata:
   author: hani
-  version: "2.0.0"
+  version: "3.0.0"
 ---
 
 # Building with UX
 
 Design intelligence for building clean, usable interfaces. Guidance is organized into
 **7 pillars** that together cover a whole interface — not just the words in it. Each rule is
-atomic (one file), sourced from practitioner talks and references, and applied through a
-**Build Workflow** that turns intent into a clean artifact.
+atomic (one file) and applied through a **Build Workflow** that turns intent into a clean
+artifact. The 23 Memorisely-derived additions record direct reel provenance.
 
 > Knowledge in this skill grows by distilling expert UX talks (videos, reels, articles) into
-> atomic rules. New pillars start empty and fill over time — see `CONTRIBUTING.md` for the
-> transcript → rule process. The **Content & Microcopy** pillar ships with 25 rules.
+> atomic rules. See `CONTRIBUTING.md` for the transcript → rule process. The skill currently
+> ships with **48 rules across all 7 pillars**.
 
 ## When to Apply
 
@@ -41,24 +41,23 @@ Skip for: pure backend/API/infra work, or non-interface logic with no visual or 
 | 6 | Content & Microcopy | `errors- states- forms- feedback- onboarding-` | Interface text and message patterns | HIGH |
 | 7 | Accessibility & Inclusion | `a11y-` | Contrast, keyboard, screen readers, reduced motion, color-not-only | CRITICAL |
 
-Pillars 1–5 and 7 are scaffolded and populate as sources are transcribed. Pillar 6 is complete.
-
 ## Build Workflow
 
 Apply the pillars in this order when building an artifact. Each step names the question to
 answer; pull specific rules from the matching pillar's `rules/` as they exist.
 
-1. **Frame** — What is this artifact for, who uses it, on what platform, and what is the one
-   job this screen must do? Everything else serves that job.
-2. **Foundations** (`principles-`) — Establish a clear hierarchy and one obvious primary
-   action; remove choices that don't serve the job.
+1. **Frame** — What is this artifact for, who uses it, on what platform, and what is its
+   primary job? Record legitimate supporting jobs and independent decision regions instead of
+   forcing a complex dashboard into one action.
+2. **Foundations** (`principles-`) — Establish a clear hierarchy and an evidence-backed
+   primary action in each decision region; remove choices that don't serve the job.
 3. **Structure** (`layout-`, `nav-`) — Lay out on a consistent grid and spacing rhythm;
    prioritize core content; make navigation predictable.
 4. **Style** (`visual-`) — Apply a coherent color system and type scale; prefer consistency
    over novelty; use semantic tokens, not raw values.
 5. **Interaction & Motion** (`interaction-`) — Give every interactive element its states
    (hover/press/disabled/loading); use motion to explain cause and effect; confirm input fast.
-6. **Content & Microcopy** (Pillar 6) — Apply the 25 rules below for errors, states, forms,
+6. **Content & Microcopy** (Pillar 6) — Apply the rules below for errors, states, forms,
    feedback, and onboarding.
 7. **Accessibility** (`a11y-`) — Verify contrast, keyboard paths, screen-reader labels,
    reduced-motion, and that color is never the only signal.
@@ -66,10 +65,40 @@ answer; pull specific rules from the matching pillar's `rules/` as they exist.
 
 ## Quick Reference
 
-### Pillars 1–5, 7 (scaffolded)
+### Pillar 1 — Foundations
 
-No rules yet. As talks are transcribed, atomic rules land in `rules/{prefix}-{slug}.md` and
-are listed here under their pillar. See `CONTRIBUTING.md` for the transcript → rule process.
+- [`principles-one-primary-action`](rules/principles-one-primary-action.md) — Give each decision region one primary action
+- [`principles-use-familiar-interactions`](rules/principles-use-familiar-interactions.md) — Prefer familiar interactions over novel ones
+- [`principles-validate-real-content-and-flows`](rules/principles-validate-real-content-and-flows.md) — Validate with real content and complete flows
+
+### Pillar 2 — Layout & Hierarchy
+
+- [`layout-group-and-rank-content`](rules/layout-group-and-rank-content.md) — Group content before styling and rank the groups
+- [`layout-use-one-alignment-keyline`](rules/layout-use-one-alignment-keyline.md) — Use one dominant alignment keyline
+- [`layout-use-whitespace-before-containers`](rules/layout-use-whitespace-before-containers.md) — Use whitespace before adding containers
+- [`layout-use-consistent-spacing-scale`](rules/layout-use-consistent-spacing-scale.md) — Use a consistent spacing scale
+- [`layout-design-mobile-as-scrollable-flow`](rules/layout-design-mobile-as-scrollable-flow.md) — Design mobile screens as scrollable flows
+
+### Pillar 3 — Visual Design
+
+- [`visual-match-nested-radii-to-padding`](rules/visual-match-nested-radii-to-padding.md) — Match nested radii to their padding
+- [`visual-give-color-a-job`](rules/visual-give-color-a-job.md) — Give every color a job
+- [`visual-build-dark-mode-depth-with-surfaces`](rules/visual-build-dark-mode-depth-with-surfaces.md) — Build dark-mode depth with dark surfaces
+- [`visual-test-typefaces-at-use-size`](rules/visual-test-typefaces-at-use-size.md) — Test typefaces at their real use sizes
+- [`visual-use-one-icon-family`](rules/visual-use-one-icon-family.md) — Use one coherent icon family
+- [`visual-layer-primitive-and-semantic-tokens`](rules/visual-layer-primitive-and-semantic-tokens.md) — Layer primitive and semantic tokens
+
+### Pillar 4 — Interaction & Motion
+
+- [`interaction-choose-transition-by-relationship`](rules/interaction-choose-transition-by-relationship.md) — Choose transitions by the information relationship
+- [`interaction-animate-by-hierarchy`](rules/interaction-animate-by-hierarchy.md) — Animate according to visual hierarchy
+- [`interaction-confirm-destructive-actions-with-consequences`](rules/interaction-confirm-destructive-actions-with-consequences.md) — State consequences in destructive confirmations
+- [`interaction-stabilize-aligned-button-widths`](rules/interaction-stabilize-aligned-button-widths.md) — Stabilize button widths in aligned groups
+
+### Pillar 5 — Navigation & IA
+
+- [`nav-structure-collapsible-sidebars`](rules/nav-structure-collapsible-sidebars.md) — Preserve hierarchy when sidebars collapse
+- [`nav-use-visual-anchors-for-fast-choices`](rules/nav-use-visual-anchors-for-fast-choices.md) — Use visual anchors for fast repeated choices
 
 ### Pillar 6 — Content & Microcopy
 
@@ -79,55 +108,67 @@ technical detail.
 
 #### Errors & Failures (`errors-`)
 
-- `errors-what-why-next` — Structure errors as what happened, why, and what to do next
-- `errors-plain-language` — No raw codes, stack traces, or "Something went wrong"
-- `errors-no-blame` — Use a neutral, non-blaming tone
-- `errors-actionable-recovery` — Always offer a realistic next step
-- `errors-place-at-source` — Field errors by the field; action errors by the trigger
-- `errors-modal-only-when-blocking` — Modals only for must-resolve issues, and include an action
+- [`errors-what-why-next`](rules/errors-what-why-next.md) — Structure errors as what happened, why, and what to do next
+- [`errors-plain-language`](rules/errors-plain-language.md) — No raw codes, stack traces, or "Something went wrong"
+- [`errors-no-blame`](rules/errors-no-blame.md) — Use a neutral, non-blaming tone
+- [`errors-actionable-recovery`](rules/errors-actionable-recovery.md) — Always offer a realistic next step
+- [`errors-place-at-source`](rules/errors-place-at-source.md) — Field errors by the field; action errors by the trigger
+- [`errors-modal-only-when-blocking`](rules/errors-modal-only-when-blocking.md) — Modals only for must-resolve issues, and include an action
 
 #### Empty & Loading States (`states-`)
 
-- `states-graceful-degradation` — Render what's ready; load and fail each section independently
-- `states-empty-purpose-cta` — Empty states: what it's for, why it's empty, next step + CTA
-- `states-empty-no-dead-end` — No blank screen, no blame; surface the primary action
-- `states-loading-match-scope` — Match indicator to scope: skeleton, progress, spinner, optimistic
-- `states-loading-set-expectations` — Show that progress is happening; communicate long waits
-- `states-optimistic-safe-only` — Optimistic UI only for low-stakes reversible actions; revert on failure
-- `states-labor-illusion-honest` — Show believable effort for complex work; never fake long delays
+- [`states-graceful-degradation`](rules/states-graceful-degradation.md) — Render what's ready; load and fail each section independently
+- [`states-empty-purpose-cta`](rules/states-empty-purpose-cta.md) — Empty states: what it's for, why it's empty, next step + CTA
+- [`states-empty-no-dead-end`](rules/states-empty-no-dead-end.md) — No blank screen, no blame; surface the primary action
+- [`states-loading-match-scope`](rules/states-loading-match-scope.md) — Match indicator to scope: skeleton, progress, spinner, optimistic
+- [`states-loading-set-expectations`](rules/states-loading-set-expectations.md) — Show that progress is happening; communicate long waits
+- [`states-optimistic-safe-only`](rules/states-optimistic-safe-only.md) — Optimistic UI only for low-stakes reversible actions; revert on failure
+- [`states-labor-illusion-honest`](rules/states-labor-illusion-honest.md) — Show believable effort for complex work; never fake long delays
 
 #### Forms & Input (`forms-`)
 
-- `forms-inline-validation` — Validate inline as users leave each field, not all at once on submit
-- `forms-mark-required` — Clearly mark required fields and show what's missing
-- `forms-show-limits-and-rules` — Show character limits and password rules up front, updating live
-- `forms-prefill-known-data` — Pre-fill fields with data you already have
-- `forms-forgiving-input` — Accept flexible formats and normalize in the backend
+- [`forms-expose-small-choice-sets`](rules/forms-expose-small-choice-sets.md) — Expose small choice sets instead of hiding them
+- [`forms-inline-validation`](rules/forms-inline-validation.md) — Validate inline as users leave each field, not all at once on submit
+- [`forms-mark-required`](rules/forms-mark-required.md) — Clearly mark required fields and show what's missing
+- [`forms-show-limits-and-rules`](rules/forms-show-limits-and-rules.md) — Show character limits and password rules up front, updating live
+- [`forms-prefill-known-data`](rules/forms-prefill-known-data.md) — Pre-fill fields with data you already have
+- [`forms-forgiving-input`](rules/forms-forgiving-input.md) — Accept flexible formats and normalize in the backend
 
 #### Success & Feedback (`feedback-`)
 
-- `feedback-confirm-success` — Confirm what succeeded, what's next, and a way forward
-- `feedback-toasts-non-critical` — Use toasts only for low-importance, safe-to-miss updates
-- `feedback-inline-when-actionable` — Use inline feedback near the element when the user may need to act
-- `feedback-persist-critical-info` — Keep key information somewhere persistent, not only in a toast
+- [`feedback-confirm-success`](rules/feedback-confirm-success.md) — Confirm what succeeded, what's next, and a way forward
+- [`feedback-toasts-non-critical`](rules/feedback-toasts-non-critical.md) — Use toasts only for low-importance, safe-to-miss updates
+- [`feedback-inline-when-actionable`](rules/feedback-inline-when-actionable.md) — Use inline feedback near the element when the user may need to act
+- [`feedback-persist-critical-info`](rules/feedback-persist-critical-info.md) — Keep key information somewhere persistent, not only in a toast
 
 #### Onboarding & Help (`onboarding-`)
 
-- `onboarding-focus-key-actions` — Focus on the few actions that lead to value
-- `onboarding-just-in-time-help` — Short, context-specific help near complex controls
-- `onboarding-skippable` — Always allow skip/dismiss; no walls of text
+- [`onboarding-focus-key-actions`](rules/onboarding-focus-key-actions.md) — Focus on the few actions that lead to value
+- [`onboarding-just-in-time-help`](rules/onboarding-just-in-time-help.md) — Short, context-specific help near complex controls
+- [`onboarding-skippable`](rules/onboarding-skippable.md) — Always allow skip/dismiss; no walls of text
+
+### Pillar 7 — Accessibility & Inclusion
+
+- [`a11y-test-contrast-in-context`](rules/a11y-test-contrast-in-context.md) — Test contrast in the real component context
+- [`a11y-size-touch-targets-generously`](rules/a11y-size-touch-targets-generously.md) — Give touch controls generous target areas
+
+These two corpus-derived rules are additions, not a complete accessibility standard. Keyboard,
+screen-reader semantics, focus order/visibility, dynamic type/reflow, reduced motion,
+color-not-only, and accessible charts/tables remain baseline obligations. Apply the current
+platform guidance and WCAG level required by the product even when no atomic rule exists yet.
 
 ## Pre-Delivery Checklist
 
 Before an artifact ships, confirm:
 
-- **Foundations** — There is one clear primary action; the hierarchy guides the eye to it.
+- **Foundations** — Each decision region has an evidence-backed primary when one genuinely dominates; the hierarchy guides the eye without flattening independent tasks.
 - **Layout** — Spacing follows a consistent rhythm; nothing is arbitrarily aligned.
 - **Visual** — Color and type come from one system; no orphan styles.
 - **Interaction** — Every interactive element has hover/press/disabled/loading states; feedback is immediate.
 - **Content** — Errors, empty/loading states, forms, and confirmations follow Pillar 6.
-- **Accessibility** — Contrast passes, keyboard works, labels exist, color isn't the only signal, motion respects reduced-motion.
-- **Fit** — Everything on screen serves the job; the rest is cut.
+- **Accessibility** — Contrast passes in context, touch targets are generous, keyboard works, labels exist, color isn't the only signal, and motion respects reduced-motion.
+- **Fit** — Every element serves an identified primary or supporting job; unowned content is cut.
+- **Reality** — Realistic content, edge states, themes, and the complete task flow have been exercised.
 
 ## Response Format
 

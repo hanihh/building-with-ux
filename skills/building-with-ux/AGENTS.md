@@ -1,7 +1,7 @@
 # Building with UX
 
-**Version 2.0.0**
-June 2026
+**Version 3.0.0**
+September 2026
 
 > **Note:**
 > This document is for agents and LLMs to follow when designing, building, or reviewing user
@@ -17,22 +17,22 @@ into **7 pillars** that together cover a whole interface — Foundations, Layout
 Visual Design, Interaction & Motion, Navigation & IA, Content & Microcopy, and Accessibility &
 Inclusion — and is applied through a build workflow that turns intent into a clean artifact.
 
-Knowledge is distilled into atomic, sourced rules from practitioner talks (videos, reels,
-articles); see `CONTRIBUTING.md`. Pillars 1–5 and 7 are scaffolded and fill over time. Pillar 6
-(Content & Microcopy) ships complete with 25 rules.
+Knowledge is distilled into atomic rules from practitioner talks (videos, reels, articles);
+see `CONTRIBUTING.md`. This guide compiles 48 rules across all 7 pillars. The 23
+Memorisely-derived additions record direct reel provenance in their rule files.
 
 ## Design stance (applies across pillars)
 
-- Serve the screen's one job; cut everything that doesn't.
+- Frame the screen's primary and legitimate supporting jobs; cut content with no owned role.
 - Consistency over novelty; reuse patterns, tokens, and terminology already in the product.
-- Make the primary action obvious and give every action clear feedback.
+- Make the evidence-backed primary action in each decision region obvious and give every action clear feedback.
 - Be clear before clever; specific, not vague. Calm, direct, friendly, professional.
 - Never fabricate technical detail or backend behavior. If context is missing, state assumptions.
 
 ## Build Workflow
 
-1. **Frame** — purpose, audience, platform, and the one job this screen must do.
-2. **Foundations** (`principles-`) — clear hierarchy, one primary action, fewer choices.
+1. **Frame** — purpose, audience, platform, primary job, supporting jobs, and decision regions.
+2. **Foundations** (`principles-`) — clear hierarchy, evidence-backed priority per decision region, fewer choices.
 3. **Structure** (`layout-`, `nav-`) — consistent grid and spacing; predictable navigation.
 4. **Style** (`visual-`) — coherent color and type system; semantic tokens, not raw values.
 5. **Interaction & Motion** (`interaction-`) — states for every element; purposeful motion; fast feedback.
@@ -44,18 +44,18 @@ articles); see `CONTRIBUTING.md`. Pillars 1–5 and 7 are scaffolded and fill ov
 
 ## Table of Contents
 
-1. [Foundations](#pillar-1--foundations) — **CRITICAL** *(scaffolded)*
-2. [Layout & Hierarchy](#pillar-2--layout--hierarchy) — **HIGH** *(scaffolded)*
-3. [Visual Design](#pillar-3--visual-design) — **HIGH** *(scaffolded)*
-4. [Interaction & Motion](#pillar-4--interaction--motion) — **HIGH** *(scaffolded)*
-5. [Navigation & IA](#pillar-5--navigation--ia) — **HIGH** *(scaffolded)*
+1. [Foundations](#pillar-1--foundations) — **CRITICAL**
+2. [Layout & Hierarchy](#pillar-2--layout--hierarchy) — **HIGH**
+3. [Visual Design](#pillar-3--visual-design) — **HIGH**
+4. [Interaction & Motion](#pillar-4--interaction--motion) — **HIGH**
+5. [Navigation & IA](#pillar-5--navigation--ia) — **HIGH**
 6. [Content & Microcopy](#pillar-6--content--microcopy) — **HIGH**
    - 6.1 [Errors & Failures](#61-errors--failures) — **CRITICAL**
    - 6.2 [Empty & Loading States](#62-empty--loading-states) — **HIGH**
    - 6.3 [Forms & Input](#63-forms--input) — **HIGH**
    - 6.4 [Success & Feedback](#64-success--feedback) — **MEDIUM**
    - 6.5 [Onboarding & Help](#65-onboarding--help) — **MEDIUM**
-7. [Accessibility & Inclusion](#pillar-7--accessibility--inclusion) — **CRITICAL** *(scaffolded)*
+7. [Accessibility & Inclusion](#pillar-7--accessibility--inclusion) — **CRITICAL**
 
 ---
 
@@ -66,7 +66,33 @@ articles); see `CONTRIBUTING.md`. Pillars 1–5 and 7 are scaffolded and fill ov
 The heuristics that govern every other pillar — visual hierarchy, consistency, feedback,
 affordance, recognition over recall, and managing cognitive load.
 
-*Scaffolded. Rules are distilled from sourced talks (see `CONTRIBUTING.md`); none recorded yet.*
+#### Give each decision region one primary action
+
+Choose priority from the user's current goal, task sequence, frequency, and risk—not visual
+taste. Use one dominant action only when one genuinely dominates the decision region;
+independent regions may differ. Otherwise use balanced secondary actions.
+
+**Don't:** Six equally prominent buttons competing for attention.
+
+**Do:** One evidence-backed primary, a small secondary set, and **More** for infrequent options.
+
+#### Prefer familiar interactions over novel ones
+
+Reuse platform and product patterns users already know unless research shows that a new
+interaction performs better. Novelty must earn its learning and accessibility cost.
+
+**Don't:** Invent a new gesture for a common action only to feel distinctive.
+
+**Do:** Use the expected control and express personality through content and visual treatment.
+
+#### Validate with real content and complete flows
+
+Use realistic names, dates, lengths, statuses, and data. Exercise navigation, search, alternate
+themes, empty/error states, and the path back—not only a polished happy path.
+
+**Don't:** Repeat idealized placeholders and judge only a static composition.
+
+**Do:** Test short, long, missing, failed, selected, and localized content through the full flow.
 
 ---
 
@@ -77,7 +103,50 @@ affordance, recognition over recall, and managing cognitive load.
 How space and structure guide the eye — grid, spacing rhythm, alignment, whitespace, focal
 point, content priority, and responsive behavior.
 
-*Scaffolded. Rules are distilled from sourced talks (see `CONTRIBUTING.md`); none recorded yet.*
+#### Group content before styling and rank the groups
+
+Cluster content by meaning, then choose primary, secondary, and tertiary groups. Express that
+order with size, weight, color, spacing, placement, and proximity.
+
+**Don't:** Style an unstructured list where every item has equal weight.
+
+**Do:** Establish a hero message, keep related support nearby, and place tertiary metadata last.
+
+#### Use one dominant alignment keyline
+
+Prefer a shared left edge for multi-line or dense content. Mix alignment only when the change
+communicates a real relationship, such as a trailing value column.
+
+**Don't:** Stack centered headings, descriptions, prices, and actions with different centers.
+
+**Do:** Align content to one keyline and use proximity to connect labels, values, and actions.
+
+#### Use whitespace before adding containers
+
+Group with proximity, alignment, and whitespace first. Add a surface, border, or shadow only
+when it communicates elevation, interaction, selection, or emphasis.
+
+**Don't:** Put every content block inside a bordered card.
+
+**Do:** Let whitespace form ordinary groups and reserve surfaces for meaningful emphasis.
+
+#### Use a consistent spacing scale
+
+Choose a small base unit—commonly 4px—and derive gaps, padding, and control sizes from its
+multiples. Adjust for platform conventions, density, typography, and touch requirements.
+
+**Don't:** Eyeball unrelated values such as 7px, 13px, and 19px throughout one family.
+
+**Do:** Use named spacing tokens and document justified exceptions.
+
+#### Design mobile screens as scrollable flows
+
+Use the viewport to test the initial experience, not as a fixed canvas that must contain
+everything. Preserve readable content and design the complete scroll and sticky behavior.
+
+**Don't:** Shrink type, controls, and spacing until the task fits inside one phone frame.
+
+**Do:** Prioritize the first view and let lower-priority content follow in a deliberate sequence.
 
 ---
 
@@ -88,7 +157,59 @@ point, content priority, and responsive behavior.
 The surface treatment — color systems and contrast, type scale and pairing, elevation and
 shadow, iconography, and style consistency.
 
-*Scaffolded. Rules are distilled from sourced talks (see `CONTRIBUTING.md`); none recorded yet.*
+#### Match nested radii to their padding
+
+For uniformly padded nested rounded shapes, start with
+`outer radius = inner radius + padding`. Verify optically for asymmetric padding.
+
+**Don't:** Apply the same radius to a card and its inset image.
+
+**Do:** Increase the outer radius by the inset so the visible gap follows the curve evenly.
+
+#### Give every color a job
+
+Begin with neutral backgrounds and surfaces. Add color for action, feedback, state, identity,
+or data meaning, and remove it when it serves none of those purposes.
+
+**Don't:** Color avatars, icons, navigation, cards, and headings independently for decoration.
+
+**Do:** Use a neutral base, accessible primary accent, and small semantic feedback palette.
+
+#### Build dark-mode depth with dark surfaces
+
+Use the darkest tone for the recessed screen background and progressively lighter dark tones
+for elevated surfaces. Subdue borders and saturated accents; pure black is optional.
+
+**Don't:** Paste a light-mode card onto a dark background or outline every surface in white.
+
+**Do:** Express elevation through restrained tonal steps and recheck every state in context.
+
+#### Test typefaces at their real use sizes
+
+Evaluate counters, x-height, ascenders, descenders, baseline, line height, numerals, kerning,
+and weights using actual interface strings at target sizes.
+
+**Don't:** Choose a font from one large alphabet sample.
+
+**Do:** Micro-test labels, paragraphs, tables, numbers, long names, and multiple scripts.
+
+#### Use one coherent icon family
+
+Prefer an established accessible library that covers product needs and maps cleanly to code.
+Define size, stroke, fill, alignment, and active-state rules before adding exceptions.
+
+**Don't:** Mix unrelated solid, outline, duotone, and 3D icons in one navigation.
+
+**Do:** Use one family for controls and reserve other styles for separate illustrative roles.
+
+#### Layer primitive and semantic tokens
+
+Separate raw values, ordered primitives such as `gray/100`, and semantic aliases such as
+`color/text/secondary`. Map light and dark modes through aliases.
+
+**Don't:** Apply hex values or vague tokens such as `gray2` directly throughout components.
+
+**Do:** Map `raw value → primitive → semantic role`, then consume that role in design and code.
 
 ---
 
@@ -99,7 +220,41 @@ shadow, iconography, and style consistency.
 How the interface responds — interaction states, affordances, animation timing and easing,
 gestures, touch targets, and microinteractions.
 
-*Scaffolded. Rules are distilled from sourced talks (see `CONTRIBUTING.md`); none recorded yet.*
+#### Choose transitions by the information relationship
+
+Use context transitions when content changes inside stable structure, drill transitions between
+hierarchy levels, and continuity when a shared element persists into the next state.
+
+**Don't:** Apply one dissolve to tabs, list-to-detail navigation, and card expansion.
+
+**Do:** Keep tabs stable, express hierarchy during drill-in, and morph a shared card into detail.
+
+#### Animate according to visual hierarchy
+
+Keep persistent controls stable or fade them subtly. Give primary changing content the clearest
+movement and stagger secondary elements only when it clarifies sequence.
+
+**Don't:** Move every control, label, and background with equal intensity.
+
+**Do:** Animate the changed card or sheet, preserve orientation, and provide reduced motion.
+
+#### State consequences in destructive confirmations
+
+Inform rather than ask. Use a verb-plus-object title, state the consequence and reversibility,
+label the destructive action directly, and provide **Cancel** plus a close path.
+
+**Don't:** “Are you sure?” with **Yes** and **No**.
+
+**Do:** “Delete folder” — “This permanently deletes 18 files.” **Delete** / **Cancel**.
+
+#### Stabilize button widths in aligned groups
+
+When primary buttons repeat in an aligned group, use a shared minimum width or stretch them to
+the container while allowing long localized labels to grow or wrap safely.
+
+**Don't:** Let short and long labels create erratic widths in one comparison row.
+
+**Do:** Apply a shared minimum or container width, then test the longest supported label.
 
 ---
 
@@ -110,7 +265,24 @@ gestures, touch targets, and microinteractions.
 How people move and orient — information architecture, wayfinding, menus, search, back
 behavior, and deep linking.
 
-*Scaffolded. Rules are distilled from sourced talks (see `CONTRIBUTING.md`); none recorded yet.*
+#### Preserve hierarchy when sidebars collapse
+
+Left-align and prioritize navigation, group related items, and keep the primary set concise.
+Provide hover, focus, and active states. Every collapsed item needs a programmatic accessible
+name; tooltips are supplemental and never replace that name or a usable touch pattern.
+
+**Don't:** Leave an undifferentiated icon column with no active state.
+
+**Do:** Keep order stable and verify keyboard, touch, screen-reader, collapsed, and dark states.
+
+#### Use visual anchors for fast repeated choices
+
+Pair repeated options with meaningful icons, silhouettes, or thumbnails. Keep text labels for
+clarity and accessibility; the anchor supports recognition rather than replacing meaning.
+
+**Don't:** Present visually identical text blocks for recognizable categories.
+
+**Do:** Pair each option with a stable shape and label so users can scan, recognize, then confirm.
 
 ---
 
@@ -338,6 +510,16 @@ Reviewing your return for possible deductions…
 Reduce friction so users can complete forms quickly and confidently, with feedback as soon
 as something needs fixing.
 
+#### Expose small choice sets instead of hiding them
+
+For roughly two to seven mutually exclusive options, prefer radio buttons or a segmented
+choice over a dropdown. For compact multi-select sets, use visible chips when practical and
+keep selections visible.
+
+**Don't:** Hide three choices or a multi-select list behind an abstract dropdown.
+
+**Do:** Ask a clear question, show the choices, and visibly preserve what is selected.
+
 #### Validate inline as users leave each field
 
 Give feedback when the user leaves a field, not all at once after submit. Keep the message
@@ -492,4 +674,27 @@ Quick tip: drag tasks to reorder them.   [ Got it ]   [ Skip tips ]
 Usable by everyone — color contrast, keyboard navigation, screen-reader semantics and labels,
 reduced-motion, dynamic type, and never relying on color alone.
 
-*Scaffolded. Rules are distilled from sourced talks (see `CONTRIBUTING.md`); none recorded yet.*
+The two rules below come directly from the current transcript corpus; they are not a complete
+accessibility standard. Keyboard behavior, focus order and visibility, screen-reader semantics,
+dynamic type and reflow, reduced motion, color-not-only, and accessible charts and tables remain
+baseline obligations. Apply current platform guidance and the WCAG level required by the product.
+
+#### Test contrast in the real component context
+
+Check text, icons, borders, focus indicators, disabled states, and action labels against their
+actual surfaces in every theme. For web WCAG 2.2 AA, require 4.5:1 for normal text, 3:1 for
+large text, and 3:1 for meaningful non-text UI boundaries or states.
+
+**Don't:** Force the exact marketing swatch onto a primary button because it is canonical.
+
+**Do:** Preserve the brand relationship while selecting a tested pair that passes the standard.
+
+#### Give touch controls generous target areas
+
+Size hit areas to platform guidance and center icons inside the larger target. For web WCAG 2.2
+AA, require 24×24 CSS px or sufficient spacing under its exceptions; prefer 44×44 when space
+allows. Test at text scaling and on a real device.
+
+**Don't:** Make only the 20px icon tappable or overlap a floating action with tab targets.
+
+**Do:** Make the full tab cell interactive, pair icon and label, and show a clear active state.

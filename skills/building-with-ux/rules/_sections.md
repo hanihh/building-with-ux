@@ -4,8 +4,9 @@ This file defines the skill's pillars, the filename prefixes that group rules in
 impact level, and a one-line description. The prefix on a rule filename (`{prefix}-{slug}.md`)
 determines which pillar it belongs to.
 
-Pillars 1–5 and 7 are scaffolded; rules populate as sources are transcribed (see
-`CONTRIBUTING.md`). Pillar 6 (Content & Microcopy) ships complete with 25 rules.
+All 7 pillars contain rules. The skill currently ships with 48 rules, including 23 new rules
+with direct Memorisely reel provenance; new knowledge continues to be distilled through
+`CONTRIBUTING.md`.
 
 ---
 

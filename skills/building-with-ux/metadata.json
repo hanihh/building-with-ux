@@ -1,12 +1,16 @@
 {
-  "version": "2.0.0",
+  "version": "3.0.0",
   "author": "hani",
-  "date": "June 2026",
-  "abstract": "Holistic UX design intelligence for building clean, usable UI artifacts. Organizes guidance into 7 pillars — Foundations, Layout & Hierarchy, Visual Design, Interaction & Motion, Navigation & IA, Content & Microcopy, and Accessibility & Inclusion — applied through a build workflow that turns intent into a clean artifact. Knowledge is distilled into atomic, sourced rules from practitioner talks; the Content & Microcopy pillar ships with 25 rules across errors, states, forms, feedback, and onboarding.",
+  "date": "September 2026",
+  "abstract": "Holistic UX design intelligence for building clean, usable UI artifacts. Organizes 48 atomic rules into 7 pillars — Foundations, Layout & Hierarchy, Visual Design, Interaction & Motion, Navigation & IA, Content & Microcopy, and Accessibility & Inclusion — applied through a build workflow that turns intent into a clean artifact. The 23 Memorisely-derived additions record direct reel provenance.",
   "references": [
     "https://www.nngroup.com/articles/error-message-guidelines/",
     "https://www.nngroup.com/articles/empty-state-interface-design/",
     "https://www.nngroup.com/articles/progress-indicators/",
-    "https://agentskills.io/"
+    "https://agentskills.io/",
+    "https://www.facebook.com/Memorisely",
+    "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum",
+    "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+    "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html"
   ]
 }

@@ -3,8 +3,8 @@
 A skill for AI agents that helps build clean, usable UI artifacts by applying UX design
 guidance across a whole interface — structure, visuals, interaction, content, and accessibility.
 
-Knowledge is distilled from expert UX talks (videos, reels, articles) into atomic, sourced
-rules. See `CONTRIBUTING.md` for the transcript → rule process.
+Knowledge is distilled from expert UX talks (videos, reels, articles) into atomic rules. New
+rules record direct provenance; see `CONTRIBUTING.md` for the transcript → rule process.
 
 ## Structure
 
@@ -21,15 +21,16 @@ rules. See `CONTRIBUTING.md` for the transcript → rule process.
 
 | # | Pillar | Prefix(es) | Status |
 |---|--------|-----------|--------|
-| 1 | Foundations | `principles-` | scaffolded |
-| 2 | Layout & Hierarchy | `layout-` | scaffolded |
-| 3 | Visual Design | `visual-` | scaffolded |
-| 4 | Interaction & Motion | `interaction-` | scaffolded |
-| 5 | Navigation & IA | `nav-` | scaffolded |
-| 6 | Content & Microcopy | `errors- states- forms- feedback- onboarding-` | 25 rules |
-| 7 | Accessibility & Inclusion | `a11y-` | scaffolded |
+| 1 | Foundations | `principles-` | 3 rules |
+| 2 | Layout & Hierarchy | `layout-` | 5 rules |
+| 3 | Visual Design | `visual-` | 6 rules |
+| 4 | Interaction & Motion | `interaction-` | 4 rules |
+| 5 | Navigation & IA | `nav-` | 2 rules |
+| 6 | Content & Microcopy | `errors- states- forms- feedback- onboarding-` | 26 rules |
+| 7 | Accessibility & Inclusion | `a11y-` | 2 rules |
 
-Pillars 1–5 and 7 fill as sources are transcribed. Pillar 6 ships complete.
+The skill currently contains 48 rules across all 7 pillars. The 23 Memorisely-derived additions
+record direct reel provenance.
 
 ## Creating a new rule
 
