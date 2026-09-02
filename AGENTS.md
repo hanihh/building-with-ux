@@ -22,7 +22,7 @@ skills/
     README.md             # Optional structure and maintenance map
 ```
 
-`building-with-ux` uses seven pillar references. Its 48 rules are sections with stable rule IDs
+`building-with-ux` uses seven pillar references. Its 60 rules are sections with stable rule IDs
 inside those references; do not reintroduce one-file-per-rule fragmentation or another
 duplicated all-rules document.
 

@@ -28,8 +28,8 @@ I (and anyone who installs it) can stop tool-shopping and just build.
 Build clean, usable UI artifacts by applying UX guidance across a whole interface — layout,
 visual hierarchy, color, typography, interaction, motion, navigation, content/microcopy, and
 accessibility. Guidance is organized into 7 pillars and applied through a build workflow.
-The skill contains 48 independently identifiable rules grouped into seven focused references;
-23 rules include direct Memorisely reel provenance.
+The skill contains 60 independently identifiable rules grouped into seven focused references;
+35 rules include direct Memorisely reel provenance.
 
 **Use when:**
 
@@ -97,7 +97,7 @@ Review this checkout screen for hierarchy, interaction states, and copy
 Each skill contains:
 
 - `SKILL.md` — entry point: activation, routing, mandatory workflow, and delivery checklist
-- `references/` — seven task-level pillar guides with all 48 rules and agent checklists
+- `references/` — seven task-level pillar guides with all 60 rules and agent checklists
 - `CONTRIBUTING.md` — how to turn a talk transcript into rules
 - `metadata.json` — version, author, abstract
 - `README.md` — how to maintain the skill

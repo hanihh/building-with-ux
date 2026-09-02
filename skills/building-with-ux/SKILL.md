@@ -4,15 +4,15 @@ description: Holistic UX design intelligence for building clean, usable web and 
 license: MIT
 metadata:
   author: hani
-  version: "4.0.0"
+  version: "4.1.0"
 ---
 
 # Building with UX
 
 Build interfaces that are understandable, purposeful, and usable—not merely decorated. This
-skill contains **48 rules across 7 pillars**. The rules are consolidated by pillar so agents
-can load complete, relevant guidance without navigating dozens of small files. The 23
-Memorisely-derived additions retain direct reel provenance.
+skill contains **60 rules across 7 pillars**. The rules are consolidated by pillar so agents
+can load complete, relevant guidance without navigating dozens of small files. The 35
+Memorisely-derived rules retain direct reel provenance.
 
 ## When to apply
 
@@ -62,11 +62,11 @@ seven.
 | # | Pillar | Read when the task involves | Reference |
 |---|---|---|---|
 | 1 | Foundations | Goals, hierarchy, priorities, familiar patterns, validation | [`references/foundations.md`](references/foundations.md) |
-| 2 | Layout & Hierarchy | Information order, grouping, spacing, alignment, containers, responsive flow | [`references/layout-hierarchy.md`](references/layout-hierarchy.md) |
-| 3 | Visual Design | Color, semantic tokens, contrast, type, radii, elevation, icons, themes | [`references/visual-design.md`](references/visual-design.md) |
+| 2 | Layout & Hierarchy | Information order, grouping, spacing, alignment, containers, grids, text length, responsive flow | [`references/layout-hierarchy.md`](references/layout-hierarchy.md) |
+| 3 | Visual Design | Color, token and component naming, gradients, contrast, type scale, radii, elevation, icons, themes | [`references/visual-design.md`](references/visual-design.md) |
 | 4 | Interaction & Motion | States, transitions, animation, confirmations, control stability | [`references/interaction-motion.md`](references/interaction-motion.md) |
-| 5 | Navigation & IA | Structure, wayfinding, sidebars, menus, repeated choices | [`references/navigation-ia.md`](references/navigation-ia.md) |
-| 6 | Content & Microcopy | Errors, empty/loading states, forms, feedback, onboarding, help | [`references/content-microcopy.md`](references/content-microcopy.md) |
+| 5 | Navigation & IA | Structure, wayfinding, sidebars, tab bars, menus, repeated choices | [`references/navigation-ia.md`](references/navigation-ia.md) |
+| 6 | Content & Microcopy | Errors, empty/loading states, forms, sign-up/login, feedback, onboarding, help | [`references/content-microcopy.md`](references/content-microcopy.md) |
 | 7 | Accessibility & Inclusion | Contrast, touch, keyboard, semantics, reflow, reduced motion | [`references/accessibility.md`](references/accessibility.md) |
 
 ## Build workflow

@@ -112,6 +112,12 @@ Before delivery, temporarily remove each inner boundary. If the layout becomes u
 repair spacing, alignment, or typography. Restore the boundary only when it conveys meaning
 that those lighter signals cannot communicate.
 
+When a card loses its background and border, its interactivity cue moves to the interaction
+states: give borderless clickable cards a visible hover and focus treatment (a subtle surface,
+shadow, scale, or content preview) so removing the container does not remove the affordance.
+(Source: Memorisely — ‘Want to design like Apple, Netflix and Airbnb?’
+https://www.facebook.com/reel/1239001814396011)
+
 Research basis: [NN/g on common regions](https://www.nngroup.com/articles/common-region/)
 and [visual hierarchy](https://www.nngroup.com/articles/visual-hierarchy-ux-definition/).
 
@@ -144,3 +150,68 @@ Use the viewport to test the initial experience, not as a fixed canvas that must
 **Don't:** Shrink type, controls, and spacing until the entire task fits inside one phone frame.
 
 **Do:** Preserve readable content and touch targets, then design the complete scroll behavior and sticky regions.
+
+### Choose the image grid pattern by content weight
+
+- **Rule ID:** `layout-choose-grid-pattern-by-content-weight`
+- **Impact:** MEDIUM
+- **Impact rationale:** The wrong grid either flattens important items or hides the browsing structure users expect.
+- **Impact summary:** the grid should express whether items are equal, ranked, or explorable
+- **Tags:** grid, images, hierarchy, mobile, carousel
+- **Source:** "Memorisely — ‘The right pattern = less cognitive overload + more trust’ (https://www.facebook.com/reel/1200569701891135), date unknown"
+
+Pick the grid from the relationship between items, not from taste:
+
+- **Modular grid** (equal columns, usually two on mobile) when items have equal weight; it scales and responds simply.
+- **Hierarchical grid** (one large image with smaller companions) when the content tells a story and some items deserve more weight.
+- **Hero plus thumbnails** when users need to inspect one item at a time and choose which to enlarge; it builds trust for product and detail views.
+- **Carousel** when vertical space is scarce; fade one edge so the rail reads as part of the screen, and never hide essential content only in the carousel.
+
+**Don't:** Use one uniform square grid for a story-driven gallery, a product detail view, and a space-constrained row alike.
+
+**Do:** Match the pattern to the content's weighting, keep radii and gutters consistent, and test each grid at the narrowest viewport.
+
+### Compress metadata into one scannable line and lead with a hero metric
+
+- **Rule ID:** `layout-compress-metadata-into-one-line`
+- **Impact:** MEDIUM
+- **Impact rationale:** Stacked context lines and equal-weight statistics force users to read everything before finding the point.
+- **Impact summary:** context should occupy one line; the result should occupy the eye
+- **Tags:** hierarchy, metadata, metrics, scanning, density
+- **Source:** "Memorisely — ‘The difference between a UI that confuses and one that clicks?’ (https://www.facebook.com/reel/929408253474438), date unknown; Memorisely — ‘Stop guessing your UI layout’ (https://www.facebook.com/reel/1606151007624382), date unknown"
+
+Join supporting context such as author, time, category, and location into a single line separated by a soft separator (a middle dot or thin divider) aligned to the shared keyline. When a region shows several statistics, promote one hero metric with larger size and weight and place the rest below it in a smaller, aligned row.
+
+**Don't:** Stack name, timestamp, and location on three lines and show five statistics at the same size.
+
+**Do:** `Sara · 2h · Berlin` on one caption line, then a large primary result with secondary metrics aligned beneath it. Apply this inside the ranking described in `layout-group-and-rank-content`; the hero metric is whichever fact the user's task makes primary.
+
+### Limit long text to a fixed line count
+
+- **Rule ID:** `layout-limit-long-text-line-count`
+- **Impact:** MEDIUM
+- **Impact rationale:** Unbounded descriptions break layouts in lists and cards and push actions out of view.
+- **Impact summary:** predictable text height keeps grids and lists stable
+- **Tags:** text, truncation, cards, lists, content-length
+- **Source:** "Memorisely — ‘If your UI’s feeling a little “off”, it might be a hierarchy issue’ (https://www.facebook.com/reel/1195341716137529), date unknown"
+
+In repeated components (cards, list rows, feed items), cap secondary text at a defined number of lines—commonly two or three—and truncate with an ellipsis or a "more" affordance. Set the cap from the component's job, then test with the longest realistic string.
+
+**Don't:** Let a profile bio or product description grow to eight lines in a comparison list.
+
+**Do:** Clamp the caption to two lines, keep the full text reachable on the detail view, and verify the clamped row still has a clear primary and secondary level.
+
+### Structure pricing cards for a decision
+
+- **Rule ID:** `layout-structure-pricing-cards-for-decision`
+- **Impact:** MEDIUM
+- **Impact rationale:** A plan card that hides who it is for, what it costs, and how to act makes comparison slow and conversion lower.
+- **Impact summary:** each plan should answer "for whom, how much, then what"
+- **Tags:** pricing, cards, information-architecture, cta
+- **Source:** "Memorisely — ‘Design Better Pricing Cards!’ (https://www.facebook.com/reel/734517628832511), date unknown"
+
+Order each plan card as: plan name, a one-line caption stating who the plan is for, price with its billing cycle, the call to action, then the feature list under a short label. Left-align everything to one keyline, use whitespace rather than a colored header block, and repeat the identical anatomy across plans so users compare by position.
+
+**Don't:** Center a plan name over a gray header, bury the price under a long feature list, and label the button "Submit".
+
+**Do:** "Starter — For solo freelancers. €12 / month. [Start free trial]. What's included: …" with the same structure on every plan and only the recommended plan using the primary button style.
