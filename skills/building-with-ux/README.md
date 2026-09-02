@@ -1,6 +1,6 @@
 # Building with UX
 
-An agent skill for building clean, usable interfaces through 48 actionable UX rules grouped
+An agent skill for building clean, usable interfaces through 60 actionable UX rules grouped
 into seven task-level references.
 
 ## Structure
@@ -9,12 +9,12 @@ into seven task-level references.
 building-with-ux/
 ├── SKILL.md                  # Activation, routing, workflow, and delivery checklist
 ├── references/
-│   ├── foundations.md       # 3 rules
-│   ├── layout-hierarchy.md  # 5 rules
-│   ├── visual-design.md     # 6 rules
+│   ├── foundations.md       # 4 rules
+│   ├── layout-hierarchy.md  # 9 rules
+│   ├── visual-design.md     # 11 rules
 │   ├── interaction-motion.md # 4 rules
-│   ├── navigation-ia.md     # 2 rules
-│   ├── content-microcopy.md # 26 rules
+│   ├── navigation-ia.md     # 3 rules
+│   ├── content-microcopy.md # 27 rules
 │   └── accessibility.md     # 2 rules
 ├── CONTRIBUTING.md          # Transcript-to-rule maintenance process
 ├── metadata.json            # Version, author, abstract, and key references
@@ -39,12 +39,12 @@ For a complete interface or design review, agents read all seven references.
 
 | # | Pillar | Stable rule prefix(es) | Rules |
 |---|---|---|---:|
-| 1 | Foundations | `principles-` | 3 |
-| 2 | Layout & Hierarchy | `layout-` | 5 |
-| 3 | Visual Design | `visual-` | 6 |
+| 1 | Foundations | `principles-` | 4 |
+| 2 | Layout & Hierarchy | `layout-` | 9 |
+| 3 | Visual Design | `visual-` | 11 |
 | 4 | Interaction & Motion | `interaction-` | 4 |
-| 5 | Navigation & IA | `nav-` | 2 |
-| 6 | Content & Microcopy | `errors-`, `states-`, `forms-`, `feedback-`, `onboarding-` | 26 |
+| 5 | Navigation & IA | `nav-` | 3 |
+| 6 | Content & Microcopy | `errors-`, `states-`, `forms-`, `feedback-`, `onboarding-` | 27 |
 | 7 | Accessibility & Inclusion | `a11y-` | 2 |
 
 ## Maintaining the rules

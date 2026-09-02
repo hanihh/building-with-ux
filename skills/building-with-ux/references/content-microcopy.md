@@ -507,6 +507,37 @@ Phone   [ 5551234567 ]    (also accepts 555-123-4567 or (555) 123-4567)
 Stored as +1-555-123-4567
 ```
 
+#### Streamline sign-up and login into one low-friction entry
+
+- **Rule ID:** `forms-streamline-sign-up-and-login`
+- **Impact:** HIGH
+- **Impact rationale:** Every extra field, duplicated screen, or vague button at the door costs sign-ups before the product has shown any value.
+- **Impact summary:** the entry flow should ask for the minimum and say exactly what happens next
+- **Tags:** forms, authentication, sign-up, login, cta, microcopy
+- **Source:** "Memorisely — ‘Sign-up forms that actually work? Yes please.’ (https://www.facebook.com/reel/775152848372082), date unknown; Memorisely — ‘Supafasssst copy tip’ (https://www.facebook.com/reel/2169888117092814), date unknown"
+
+Where the product allows it, merge sign-up and login into one screen: offer social or single-sign-on first, then a single email field with a functional placeholder, and continue with a verification code instead of collecting a username and password. Label the button with the action and the method (`Continue with email`, `Continue with Google`), put terms and privacy links in a caption under the form, and use a functional sans-serif rather than a display face. When sign-in and sign-up must be separate buttons in a header, give one primary emphasis and the other ghost emphasis; for products with a free tier, write the primary label as verb plus product value (`Start tracking free`) rather than a generic `Sign up`.
+
+**Don't:**
+
+```text
+[Display-font title, centered]  CREATE YOUR ACCOUNT
+Username · Email · Password · Confirm password
+[ Submit ]      Already have an account? Log in
+```
+
+**Do:**
+
+```text
+Welcome back or brand new — same door.
+[ Continue with Google ]
+Email  [ name@company.com ]
+[ Continue with email ]
+By continuing you agree to the Terms and Privacy Policy.
+```
+
+Keep password login available where security policy, enterprise SSO, or offline access requires it; the rule removes duplicated screens and unneeded fields, not the option users depend on.
+
 ### Success & Feedback
 
 #### Confirm what succeeded, what's next, and a way forward

@@ -22,7 +22,7 @@ How people move and orient — information architecture, wayfinding, menus, sear
 - **Tags:** sidebar, navigation, wayfinding
 - **Source:** "Memorisely — ‘10 Supafast updates to help you design a better sidebar navigation’ (https://www.facebook.com/reel/3646814668927376), date unknown"
 
-Left-align and prioritize navigation, group related items, keep the primary visible set concise, and integrate utilities coherently. Provide hover, focus, and active states. Every collapsed item still needs a programmatic accessible name; a tooltip may supplement pointer/keyboard discovery but never substitutes for that name or for a usable touch pattern. Prefer an expandable drawer when icon-only navigation would be ambiguous on touch.
+Left-align and prioritize navigation, group related items, keep the primary visible set concise (the source recommends no more than five top-level items; move settings, support, and account into a grouped utility block), and integrate utilities coherently. Let search fill the sidebar width and show its keyboard shortcut; render notification badges in the alert feedback color, right-aligned, and check their contrast. Provide hover, focus, and active states. Every collapsed item still needs a programmatic accessible name; a tooltip may supplement pointer/keyboard discovery but never substitutes for that name or for a usable touch pattern. Prefer an expandable drawer when icon-only navigation would be ambiguous on touch.
 
 **Don't:** Hide text and leave an undifferentiated column of icons with no active state.
 
@@ -42,3 +42,18 @@ Pair repeated options with distinct, consistent, meaningful icons, silhouettes, 
 **Don't:** Present a long list of visually identical text blocks for choices with recognizable categories.
 
 **Do:** Pair each option with a stable shape and label so users can scan, recognize, then confirm.
+
+### Keep tab bars flat, labeled, and legible over content
+
+- **Rule ID:** `nav-keep-tab-bar-flat-and-labeled`
+- **Impact:** HIGH
+- **Impact rationale:** A tab bar is the user's map; decorative shapes and missing labels remove orientation on every screen.
+- **Impact summary:** the bottom bar must read as one predictable row of destinations
+- **Tags:** tab-bar, mobile, navigation, wayfinding, labels
+- **Source:** "Memorisely — ‘Design better mobile tab bars’ (https://www.facebook.com/reel/2578041625882935), date unknown"
+
+Place every destination inside the bar as an icon with a text label; do not float a raised action button over the bar or break the row for one item. Use one icon family, give the active tab a clear filled or colored state, keep spacing equal across tabs, and show notification counts with a small badge on the relevant tab. Let the bar sit over scrolling content with a translucent or blurred background so users see that more content continues beneath it. For sizing, follow `a11y-size-touch-targets-generously`.
+
+**Don't:** An oversized create button overlapping the center of the bar, uppercase labels, and an active tab that only changes hue slightly.
+
+**Do:** Five or fewer evenly spaced tabs, each with icon and label, a distinct active state, a profile tab that can carry the avatar and a badge, and a bar that remains legible over photos and dark content.

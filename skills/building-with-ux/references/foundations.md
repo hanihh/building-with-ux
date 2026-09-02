@@ -57,3 +57,18 @@ Use realistic names, dates, lengths, statuses, and data. Exercise navigation, se
 **Don't:** Repeat idealized placeholder rows and judge the screen only as a static composition.
 
 **Do:** Test short, long, missing, failed, selected, and localized content through the full task flow.
+
+### Match affordance to behavior
+
+- **Rule ID:** `principles-match-affordance-to-behavior`
+- **Impact:** HIGH
+- **Impact rationale:** Elements that look interactive but are not waste taps and erode trust; elements that are interactive but look static get missed.
+- **Impact summary:** visual weight must promise only what the element does
+- **Tags:** affordance, buttons, icons, consistency
+- **Source:** "Memorisely — ‘Not every action needs to be a primary button’ (https://www.facebook.com/reel/720532684196196), date unknown; Memorisely — ‘Design Better Pricing Cards!’ (https://www.facebook.com/reel/734517628832511), date unknown"
+
+Reserve button styling (filled backgrounds, primary color, strong borders) for controls that trigger an action. Render non-interactive icons, category markers, and status glyphs as neutral icons or plain text. Do not borrow form-control shapes for read-only content.
+
+**Don't:** Style transaction category icons as small primary buttons, or draw a pricing plan's included features as empty checkboxes.
+
+**Do:** Show categories as neutral logos or icons, and mark included features with a simple check glyph. Before delivery, confirm every element that looks tappable is tappable, and every tappable element looks so.
