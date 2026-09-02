@@ -28,8 +28,8 @@ I (and anyone who installs it) can stop tool-shopping and just build.
 Build clean, usable UI artifacts by applying UX guidance across a whole interface — layout,
 visual hierarchy, color, typography, interaction, motion, navigation, content/microcopy, and
 accessibility. Guidance is organized into 7 pillars and applied through a build workflow.
-Knowledge is distilled from expert UX talks into atomic, sourced rules; the Content & Microcopy
-pillar ships with 25 rules.
+The skill contains 48 independently identifiable rules grouped into seven focused references;
+23 rules include direct Memorisely reel provenance.
 
 **Use when:**
 
@@ -73,10 +73,10 @@ cp -r building-with-ux/skills/building-with-ux <your-project>/.claude/skills/
 ```
 
 For agents that read a single instruction file (Cursor, Codex, Copilot…), point that file at
-the compiled guide instead:
+the skill entry point; it routes agents to the relevant pillar references:
 
 ```
-For any UI/UX work, follow the guidance in skills/building-with-ux/AGENTS.md.
+For any UI/UX work, follow skills/building-with-ux/SKILL.md and every relevant linked reference.
 ```
 
 ## Usage
@@ -96,9 +96,8 @@ Review this checkout screen for hierarchy, interaction states, and copy
 
 Each skill contains:
 
-- `SKILL.md` — entry point: pillars, build workflow, quick reference (always loaded when active)
-- `rules/` — one atomic rule per file, loaded on demand (progressive disclosure)
-- `AGENTS.md` — full compiled guide (all rules expanded)
+- `SKILL.md` — entry point: activation, routing, mandatory workflow, and delivery checklist
+- `references/` — seven task-level pillar guides with all 48 rules and agent checklists
 - `CONTRIBUTING.md` — how to turn a talk transcript into rules
 - `metadata.json` — version, author, abstract
 - `README.md` — how to maintain the skill

@@ -1,55 +1,69 @@
 # AGENTS.md
 
-This file provides guidance to AI coding agents (Claude Code, Codex, Cursor, Copilot, etc.)
-when working with this repository.
+Guidance for AI coding agents working with this repository.
 
-## Repository Overview
+## Repository overview
 
-A collection of skills for AI coding agents. Skills are packaged instructions that extend
-agent capabilities. Each skill lives in `skills/{skill-name}/` and follows the
-[Agent Skills](https://agentskills.io/) format.
+This repository contains installable skills for AI coding agents. Each skill lives in
+`skills/{skill-name}/` and follows the [Agent Skills](https://agentskills.io/) format.
 
-## Creating or Editing a Skill
+## Creating or editing a skill
 
-### Directory Structure
+### Directory structure
 
-```
+```text
 skills/
-  {skill-name}/           # kebab-case directory name
-    SKILL.md              # Required: entry point (frontmatter + quick reference)
-    rules/                # Atomic guidance, one rule per file (loaded on demand)
-      _sections.md        # Section metadata (title, impact, prefix)
-      _template.md        # Template for new rules
-      {prefix}-{slug}.md  # Individual rule files
-    AGENTS.md             # Full compiled guide (all rules expanded)
-    metadata.json         # version, author, abstract
-    README.md             # Maintenance notes
+  {skill-name}/
+    SKILL.md              # Required entry point, routing, and workflow
+    references/           # Focused guidance loaded directly from SKILL.md
+      {topic}.md          # Complete instructions and checklists for one topic
+    CONTRIBUTING.md       # Optional maintenance process
+    metadata.json         # Optional version, author, abstract, references
+    README.md             # Optional structure and maintenance map
 ```
 
-### Naming Conventions
+`building-with-ux` uses seven pillar references. Its 48 rules are sections with stable rule IDs
+inside those references; do not reintroduce one-file-per-rule fragmentation or another
+duplicated all-rules document.
 
-- **Skill directory**: `kebab-case` (e.g., `building-with-ux`)
-- **SKILL.md**: always uppercase, always this exact filename
-- **Rule files**: `{prefix}-{slug}.md`; section is inferred from the prefix
-- Files starting with `_` are special (templates/metadata, not rules)
+### Naming conventions
 
-### Best Practices for Context Efficiency
+- Skill directories use `kebab-case`.
+- The entry point is always uppercase `SKILL.md`.
+- Reference filenames use descriptive `kebab-case`.
+- Rule IDs use the pillar prefix and a kebab-case slug, for example
+  `layout-group-and-rank-content`.
 
-Skills load on demand — only the name and `description` load at startup; the full
-`SKILL.md` loads only when the agent decides the skill is relevant.
+### Context efficiency
 
-- **Keep `SKILL.md` under 500 lines** — push detail into `rules/`.
-- **Write a specific `description`** — it decides when the skill activates.
-- **Use progressive disclosure** — `SKILL.md` links to rule files read only when needed.
-- **File references work one level deep** — link directly from `SKILL.md` to `rules/`.
+Only the skill name and description load at startup; `SKILL.md` loads when the skill is
+relevant. Keep progressive disclosure shallow and predictable:
 
-### End-User Installation
+- Keep `SKILL.md` concise and procedural; move detailed guidance into references.
+- Write a specific frontmatter description because it controls activation.
+- Link every reference directly from `SKILL.md`; do not create chains of nested references.
+- Group rules by the task-level context an agent needs, not merely to minimize line count.
+- Keep one canonical copy of each rule and identify it with a stable ID.
+
+### UX skill preservation requirements
+
+When modifying `building-with-ux`:
+
+- [ ] Preserve every existing rule's title, ID, impact, impact rationale, tags, source when one
+  exists, instruction, examples, notes, and checks unless the change explicitly revises it.
+- [ ] Keep the seven pillar agent checklists actionable and non-overlapping.
+- [ ] Update counts and paths in `SKILL.md`, `README.md`, `CONTRIBUTING.md`, and `metadata.json`.
+- [ ] Confirm all seven references are directly linked from `SKILL.md`.
+- [ ] Check that each rule ID occurs exactly once across the references.
+- [ ] Run the skill validator, link checks, metadata validation, and `git diff --check`.
+
+### End-user installation
 
 ```bash
 npx skills add <owner>/<repo> --skill {skill-name}
 ```
 
-Manual (Claude Code):
+Manual installation for Claude Code:
 
 ```bash
 cp -r skills/{skill-name} ~/.claude/skills/
